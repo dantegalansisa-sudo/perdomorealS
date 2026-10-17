@@ -190,6 +190,15 @@
   .range::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: var(--color-navy); border: 3px solid var(--color-gold); cursor: pointer; }
 }
 
+/* Above-the-fold entrances: pure CSS so they run on first paint, before hydration.
+   LCP candidates (h1, giant word, hero image) only animate transform — never opacity. */
+@keyframes hero-rise { from { transform: translate3d(0, 28px, 0); } to { transform: none; } }
+@keyframes hero-fade { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
+@keyframes hero-scale { from { transform: scale(0.92) translate3d(0, 24px, 0); } to { transform: none; } }
+.hero-rise { animation: hero-rise 1.1s var(--ease-smooth) both; }
+.hero-fade { animation: hero-fade 0.8s var(--ease-smooth) both; }
+.hero-scale { animation: hero-scale 1.3s var(--ease-smooth) both; }
+
 /* Lenis */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }

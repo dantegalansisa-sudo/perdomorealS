@@ -25,6 +25,19 @@ export function RevealText({
 }) {
   const reduce = useReducedMotion();
   const lines = children.split("\n");
+  // Above-the-fold headings (page H1s): CSS-only rise that runs on first paint and keeps the
+  // text visible, so it never delays LCP waiting for hydration.
+  if (immediate) {
+    return (
+      <Tag className={`hero-rise ${className ?? ""}`} style={{ animationDelay: `${delay}s` }}>
+        {lines.map((line, li) => (
+          <span key={li} className="block">
+            {line}
+          </span>
+        ))}
+      </Tag>
+    );
+  }
   let wordIndex = 0;
   const trigger = immediate ? { animate: { y: "0%", rotate: 0 } } : { whileInView: { y: "0%", rotate: 0 }, viewport: { once: true, amount: 0.6 } };
   return (

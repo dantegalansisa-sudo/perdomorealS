@@ -8,8 +8,6 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { IsoVilla } from "@/components/ui/IsoVilla";
 import { Magnetic } from "@/components/motion/Magnetic";
-import { RevealText } from "@/components/motion/RevealText";
-import { EASE } from "@/components/motion/easings";
 import { openLeadModal } from "@/lib/ui-store";
 import { HeroSearchDesktop, HeroSearchMobile, QuickChips } from "./HeroSearch";
 
@@ -66,14 +64,9 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
           style={{ x: wordX, y: wordY }}
           className="pointer-events-none absolute inset-x-0 top-2 -z-10 hidden justify-center select-none lg:flex"
         >
-          <motion.span
-            initial={reduce ? false : { opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: EASE.out }}
-            className="font-display block bg-gradient-to-b from-navy/90 via-navy/45 to-navy/0 bg-clip-text text-[clamp(9rem,23.5vw,25rem)] leading-[0.82] tracking-[0.01em] text-transparent"
-          >
+          <span className="hero-rise font-display block bg-gradient-to-b from-navy/90 via-navy/45 to-navy/0 bg-clip-text text-[clamp(9rem,23.5vw,25rem)] leading-[0.82] tracking-[0.01em] text-transparent">
             PERDOMO
-          </motion.span>
+          </span>
         </motion.div>
 
         <motion.div
@@ -82,21 +75,16 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
         >
           {/* Title */}
           <div className="[grid-area:title] lg:max-w-2xl">
-            <motion.p initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="eyebrow mb-3 flex items-center gap-3">
+            <p className="hero-fade eyebrow mb-3 flex items-center gap-3" style={{ animationDelay: "0.1s" }}>
               <span className="h-px w-8 bg-gold" aria-hidden />
               {t("eyebrow")}
-            </motion.p>
-            <RevealText as="h1" immediate delay={0.15} className="text-[2.75rem] leading-[0.92] text-navy min-[390px]:text-[3.1rem] sm:text-6xl lg:text-[3.5rem] xl:text-[4.5rem] 2xl:text-[5.2rem]">
+            </p>
+            <h1 id="hero-title" className="hero-rise text-[2.75rem] leading-[0.92] text-navy min-[390px]:text-[3.1rem] sm:text-6xl lg:text-[3.5rem] xl:text-[4.5rem] 2xl:text-[5.2rem]">
               {title}
-            </RevealText>
-            <motion.p
-              initial={reduce ? false : { opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.7, ease: EASE.out }}
-              className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-navy-soft sm:text-base"
-            >
+            </h1>
+            <p className="hero-fade mt-4 max-w-md text-[0.95rem] leading-relaxed text-navy-soft sm:text-base" style={{ animationDelay: "0.35s" }}>
               {subtitle}
-            </motion.p>
+            </p>
           </div>
 
           {/* Villa (+ mobile giant word behind it) */}
@@ -109,24 +97,15 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
             </span>
             <motion.div style={{ y: villaY }} className="mx-auto w-[92%] max-w-[560px] pt-[9vw] sm:pt-12 lg:w-full lg:max-w-none lg:pt-[7vw]">
               <motion.div style={{ x: sx, y: sy }}>
-                <motion.div
-                  initial={reduce ? false : { opacity: 0, scale: 0.9, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 1.3, delay: 0.25, ease: EASE.out }}
-                >
+                <div className="hero-scale" style={{ animationDelay: "0.15s" }}>
                   <div className={reduce ? "" : "animate-float"}>{villa}</div>
-                </motion.div>
+                </div>
               </motion.div>
             </motion.div>
           </div>
 
           {/* Search */}
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8, ease: EASE.out }}
-            className="relative z-10 [grid-area:search] lg:w-[min(40rem,52vw)]"
-          >
+          <div className="hero-fade relative z-10 [grid-area:search] lg:w-[min(40rem,52vw)]" style={{ animationDelay: "0.5s" }}>
             <div className="hidden lg:block">
               <HeroSearchDesktop zones={zones} />
               <QuickChips className="mt-3 pl-2" />
@@ -134,15 +113,10 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
             <div className="lg:hidden">
               <HeroSearchMobile zones={zones} />
             </div>
-          </motion.div>
+          </div>
 
           {/* CTAs */}
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85, duration: 0.8, ease: EASE.out }}
-            className="flex flex-col gap-3 [grid-area:ctas] sm:flex-row"
-          >
+          <div className="hero-fade flex flex-col gap-3 [grid-area:ctas] sm:flex-row" style={{ animationDelay: "0.65s" }}>
             <Magnetic className="w-full sm:w-auto">
               <Link href="/properties" className="btn btn-navy w-full sm:w-auto">
                 {tc("exploreProperties")}
@@ -154,7 +128,7 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
                 {tc("askPricesLong")}
               </button>
             </Magnetic>
-          </motion.div>
+          </div>
         </motion.div>
 
         <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-bold tracking-[0.3em] text-stone uppercase xl:flex" aria-hidden>
