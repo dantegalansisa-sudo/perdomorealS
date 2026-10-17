@@ -1,1 +1,228 @@
-{}
+{
+  "meta": {
+    "listTitle": "Real estate projects in Punta Cana",
+    "listDescription": "Pre-sale, under-construction and move-in ready projects in Macao, Bávaro and Cap Cana. Starting prices, payment plans and availability.",
+    "detailTitle": "{name} in {zone}, Punta Cana",
+    "landingTitle": "89 Villas for sale in Macao, Punta Cana",
+    "landingDescription": "Private-pool villas minutes from Macao Beach. Interactive masterplan, availability and payment plans during construction."
+  },
+  "breadcrumbs": { "projects": "Projects" },
+  "landing": {
+    "h1": "89 Villas for sale in Macao, Punta Cana",
+    "eyebrow": "Flagship project · {zone}"
+  },
+  "detail": { "eyebrow": "{zone} · {status}" },
+  "sectionNav": {
+    "label": "Project sections",
+    "masterplan": "Masterplan",
+    "availability": "Availability",
+    "models": "Models",
+    "amenities": "Amenities",
+    "location": "Location",
+    "progress": "Progress",
+    "payment": "Payment plans",
+    "documents": "Documents",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "priceFrom": "Starting at",
+    "units": "Villas",
+    "unitsGeneric": "Units",
+    "delivery": "Delivery",
+    "status": "Status",
+    "availableCount": "{count, plural, one {# available} other {# available}}",
+    "whatsapp": "Chat on WhatsApp",
+    "toBeConfirmed": "To be confirmed"
+  },
+  "masterplan": {
+    "eyebrow": "Interactive masterplan",
+    "title": "Choose your villa",
+    "lead": "Explore all {total} villas in the project. Tap any lot to see its model, size, price and live status.",
+    "filterStatus": "Filter by status",
+    "filterModel": "Filter by model",
+    "all": "All",
+    "allModels": "All models",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "resetZoom": "Reset zoom",
+    "scrollHint": "Swipe to explore the plan",
+    "lotAria": "Villa {code}, {status}",
+    "planAria": "Interactive site plan of {name}",
+    "clubhouse": "Clubhouse",
+    "pool": "Pool",
+    "green": "Green area",
+    "entrance": "Entrance",
+    "gate": "Gatehouse",
+    "selectTitle": "Select a villa",
+    "selectPrompt": "Click any lot on the plan to see its details and request its price.",
+    "model": "Model",
+    "price": "Price",
+    "requestVillaPrice": "Request this villa's price",
+    "soldNotice": "This villa has been sold. We'll help you find a similar one that's available.",
+    "askSimilar": "Ask about similar villas",
+    "close": "Close",
+    "summary": "{available} of {total} villas available",
+    "lot": "Lot {number}"
+  },
+  "availability": {
+    "eyebrow": "Availability",
+    "title": "Villa list",
+    "lead": "Filter by status, model, bedrooms or price range and sort by any column.",
+    "status": "Status",
+    "model": "Model",
+    "bedrooms": "Bedrooms",
+    "priceMin": "Min price",
+    "priceMax": "Max price",
+    "any": "Any",
+    "reset": "Clear filters",
+    "results": "{count, plural, =0 {No results} one {# villa} other {# villas}}",
+    "none": "No villas match these filters.",
+    "showMore": "Show more villas",
+    "total": "Total",
+    "columns": {
+      "code": "Villa",
+      "model": "Model",
+      "bedrooms": "Beds",
+      "bathrooms": "Baths",
+      "built": "Built",
+      "lot": "Lot",
+      "price": "Price",
+      "status": "Status",
+      "action": "Action"
+    },
+    "ask": "Enquire",
+    "viewOnPlan": "View on plan",
+    "sortBy": "Sort by {column}"
+  },
+  "models": {
+    "eyebrow": "Villa models",
+    "title": "Three ways to live Macao",
+    "lead": "Every model includes a private pool and contemporary finishes.",
+    "tabsLabel": "Villa models",
+    "fromPrice": "From",
+    "features": "Features",
+    "floorplan": "Floor plan",
+    "interiors": "Interiors",
+    "exteriors": "Exteriors",
+    "cta": "Ask for the {name} model price",
+    "availableUnits": "{count, plural, =0 {No units available} one {# unit available} other {# units available}}"
+  },
+  "amenities": {
+    "eyebrow": "Amenities",
+    "title": "Resort living, every day",
+    "lead": "Shared spaces designed to unwind, gather and rent better."
+  },
+  "media": {
+    "eyebrow": "Video & virtual tour",
+    "title": "Walk through the project",
+    "video": "Project video",
+    "tour": "360° virtual tour"
+  },
+  "location": {
+    "eyebrow": "Location",
+    "title": "Minutes from Macao Beach",
+    "lead": "One of the Caribbean's most unspoiled beaches, connected to Bávaro and the airport.",
+    "distances": "Approximate distances",
+    "openMaps": "Open in Google Maps",
+    "minutes": "{count} min",
+    "pois": {
+      "macaoBeach": "Macao Beach",
+      "airport": "PUJ Airport",
+      "bavaro": "Bávaro",
+      "capCana": "Cap Cana",
+      "uveroAlto": "Uvero Alto"
+    }
+  },
+  "timeline": {
+    "eyebrow": "Construction progress",
+    "title": "Construction timeline",
+    "lead": "Tracked phase by phase. We update progress at every construction milestone.",
+    "overall": "Overall progress",
+    "completed": "Completed",
+    "inProgress": "In progress",
+    "upcoming": "Upcoming",
+    "progress": "{value}% complete"
+  },
+  "payment": {
+    "eyebrow": "Payment plans",
+    "title": "Pay during construction",
+    "lead": "Direct plans with the developer. Calculated on the starting price; adjust the amount in the calculator.",
+    "down": "Down payment at signing",
+    "during": "During construction",
+    "delivery": "On delivery",
+    "installments": "{count, plural, =0 {No monthly installments} one {# monthly installment} other {# monthly installments}}",
+    "monthly": "Approx. monthly installment",
+    "basedOn": "Example based on {price}"
+  },
+  "developer": {
+    "eyebrow": "Developer",
+    "title": "Who is building",
+    "website": "Visit website"
+  },
+  "documents": {
+    "eyebrow": "Documents",
+    "title": "Legal & technical information",
+    "lead": "Download the brochure and project documents. We'll send the rest via WhatsApp or email.",
+    "comingSoon": "Coming soon",
+    "download": "Download",
+    "brochure": "Project brochure (PDF)",
+    "brochureHint": "Generated from the current project information"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "What buyers ask us most"
+  },
+  "lead": {
+    "eyebrow": "Contact",
+    "title": "Get prices & availability",
+    "lead": "We'll send you the updated price list, floor plans and payment plans in less than 24 hours.",
+    "point1": "Updated price list per villa",
+    "point2": "Floor plans and specifications",
+    "point3": "In-person or virtual tour with an advisor",
+    "orWhatsapp": "Prefer WhatsApp?"
+  },
+  "sticky": {
+    "label": "Project contact bar"
+  },
+  "related": {
+    "eyebrow": "Project listings",
+    "title": "Published units"
+  },
+  "list": {
+    "eyebrow": "Projects",
+    "title": "Real estate projects in Punta Cana",
+    "lead": "Hand-picked developments in pre-sale, under construction and move-in ready. Prices, payment plans and up-to-date availability.",
+    "units": "{count, plural, one {# unit} other {# units}}",
+    "viewProject": "View project",
+    "flagship": "Flagship project",
+    "empty": "New projects will be published soon.",
+    "delivery": "Delivery {date}"
+  },
+  "brochure": {
+    "keyFacts": "Key facts",
+    "models": "Models",
+    "amenities": "Amenities",
+    "paymentPlans": "Payment plans",
+    "contact": "Contact",
+    "priceFrom": "Starting at",
+    "units": "Units",
+    "delivery": "Delivery",
+    "status": "Status",
+    "location": "Location",
+    "model": "Model",
+    "beds": "Beds",
+    "baths": "Baths",
+    "built": "Built (m2)",
+    "lot": "Lot (m2)",
+    "from": "From (USD)",
+    "planRow": "{down}% down · {during}% during construction ({installments} installments) · {delivery}% on delivery",
+    "planRowSimple": "{down}% down · {during}% during construction · {delivery}% on delivery",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "phone": "Phone",
+    "web": "Web",
+    "page": "Page {n} of {total}",
+    "disclaimer": "Prices, availability and specifications subject to change without notice. Information for reference only."
+  }
+}

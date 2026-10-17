@@ -1,1 +1,228 @@
-{}
+{
+  "meta": {
+    "listTitle": "Proyectos inmobiliarios en Punta Cana",
+    "listDescription": "Proyectos en preventa, en construcción y listos para entrega en Macao, Bávaro y Cap Cana. Precios desde, planes de pago y disponibilidad.",
+    "detailTitle": "{name} en {zone}, Punta Cana",
+    "landingTitle": "89 Villas en venta en Macao, Punta Cana",
+    "landingDescription": "Villas con piscina privada a minutos de Playa Macao. Masterplan interactivo, disponibilidad y planes de pago durante la construcción."
+  },
+  "breadcrumbs": { "projects": "Proyectos" },
+  "landing": {
+    "h1": "89 Villas en venta en Macao, Punta Cana",
+    "eyebrow": "Proyecto insignia · {zone}"
+  },
+  "detail": { "eyebrow": "{zone} · {status}" },
+  "sectionNav": {
+    "label": "Secciones del proyecto",
+    "masterplan": "Masterplan",
+    "availability": "Disponibilidad",
+    "models": "Modelos",
+    "amenities": "Amenidades",
+    "location": "Ubicación",
+    "progress": "Avance",
+    "payment": "Planes de pago",
+    "documents": "Documentos",
+    "faq": "Preguntas",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "priceFrom": "Precio desde",
+    "units": "Villas",
+    "unitsGeneric": "Unidades",
+    "delivery": "Entrega",
+    "status": "Estado",
+    "availableCount": "{count, plural, one {# disponible} other {# disponibles}}",
+    "whatsapp": "Escribir por WhatsApp",
+    "toBeConfirmed": "Por confirmar"
+  },
+  "masterplan": {
+    "eyebrow": "Masterplan interactivo",
+    "title": "Elige tu villa",
+    "lead": "Explora las {total} villas del proyecto. Toca cualquier lote para ver modelo, metros, precio y estado en tiempo real.",
+    "filterStatus": "Filtrar por estado",
+    "filterModel": "Filtrar por modelo",
+    "all": "Todas",
+    "allModels": "Todos los modelos",
+    "zoomIn": "Acercar",
+    "zoomOut": "Alejar",
+    "resetZoom": "Restablecer zoom",
+    "scrollHint": "Desliza para explorar el plano",
+    "lotAria": "Villa {code}, {status}",
+    "planAria": "Plano interactivo del proyecto {name}",
+    "clubhouse": "Club house",
+    "pool": "Piscina",
+    "green": "Área verde",
+    "entrance": "Acceso",
+    "gate": "Garita",
+    "selectTitle": "Selecciona una villa",
+    "selectPrompt": "Haz clic en un lote del plano para ver sus detalles y solicitar su precio.",
+    "model": "Modelo",
+    "price": "Precio",
+    "requestVillaPrice": "Solicitar precio de esta villa",
+    "soldNotice": "Esta villa ya fue vendida. Te ayudamos a encontrar una similar disponible.",
+    "askSimilar": "Consultar villas similares",
+    "close": "Cerrar",
+    "summary": "{available} de {total} villas disponibles",
+    "lot": "Lote {number}"
+  },
+  "availability": {
+    "eyebrow": "Disponibilidad",
+    "title": "Lista de villas",
+    "lead": "Filtra por estado, modelo, habitaciones o rango de precio y ordena por cualquier columna.",
+    "status": "Estado",
+    "model": "Modelo",
+    "bedrooms": "Habitaciones",
+    "priceMin": "Precio mínimo",
+    "priceMax": "Precio máximo",
+    "any": "Cualquiera",
+    "reset": "Limpiar filtros",
+    "results": "{count, plural, =0 {Sin resultados} one {# villa} other {# villas}}",
+    "none": "No hay villas que coincidan con estos filtros.",
+    "showMore": "Ver más villas",
+    "total": "Total",
+    "columns": {
+      "code": "Villa",
+      "model": "Modelo",
+      "bedrooms": "Hab.",
+      "bathrooms": "Baños",
+      "built": "Construcción",
+      "lot": "Terreno",
+      "price": "Precio",
+      "status": "Estado",
+      "action": "Acción"
+    },
+    "ask": "Consultar",
+    "viewOnPlan": "Ver en plano",
+    "sortBy": "Ordenar por {column}"
+  },
+  "models": {
+    "eyebrow": "Modelos de villa",
+    "title": "Tres formas de vivir Macao",
+    "lead": "Todos los modelos incluyen piscina privada y acabados contemporáneos.",
+    "tabsLabel": "Modelos de villa",
+    "fromPrice": "Desde",
+    "features": "Características",
+    "floorplan": "Plano",
+    "interiors": "Interiores",
+    "exteriors": "Exteriores",
+    "cta": "Consultar precio del modelo {name}",
+    "availableUnits": "{count, plural, =0 {Sin unidades disponibles} one {# unidad disponible} other {# unidades disponibles}}"
+  },
+  "amenities": {
+    "eyebrow": "Amenidades",
+    "title": "Vida de resort, todos los días",
+    "lead": "Espacios comunes pensados para descansar, compartir y rentar mejor."
+  },
+  "media": {
+    "eyebrow": "Video y tour virtual",
+    "title": "Recorre el proyecto",
+    "video": "Video del proyecto",
+    "tour": "Tour virtual 360°"
+  },
+  "location": {
+    "eyebrow": "Ubicación",
+    "title": "A minutos de Playa Macao",
+    "lead": "Una de las playas más vírgenes del Caribe, conectada con Bávaro y el aeropuerto.",
+    "distances": "Distancias aproximadas",
+    "openMaps": "Abrir en Google Maps",
+    "minutes": "{count} min",
+    "pois": {
+      "macaoBeach": "Playa Macao",
+      "airport": "Aeropuerto PUJ",
+      "bavaro": "Bávaro",
+      "capCana": "Cap Cana",
+      "uveroAlto": "Uvero Alto"
+    }
+  },
+  "timeline": {
+    "eyebrow": "Avance de obra",
+    "title": "Cronograma de construcción",
+    "lead": "Seguimiento por etapas. Actualizamos el avance con cada hito de obra.",
+    "overall": "Avance general",
+    "completed": "Completado",
+    "inProgress": "En curso",
+    "upcoming": "Próximamente",
+    "progress": "{value}% completado"
+  },
+  "payment": {
+    "eyebrow": "Planes de pago",
+    "title": "Paga durante la construcción",
+    "lead": "Planes directos con el desarrollador. Calculado sobre el precio desde; ajusta el monto en la calculadora.",
+    "down": "Inicial a la firma",
+    "during": "Durante la construcción",
+    "delivery": "Contra entrega",
+    "installments": "{count, plural, =0 {Sin cuotas mensuales} one {# cuota mensual} other {# cuotas mensuales}}",
+    "monthly": "Cuota mensual aprox.",
+    "basedOn": "Ejemplo sobre {price}"
+  },
+  "developer": {
+    "eyebrow": "Desarrollador",
+    "title": "Quién construye",
+    "website": "Visitar sitio web"
+  },
+  "documents": {
+    "eyebrow": "Documentos",
+    "title": "Información legal y técnica",
+    "lead": "Descarga el brochure y la documentación del proyecto. Te enviamos el resto por WhatsApp o correo.",
+    "comingSoon": "Disponible próximamente",
+    "download": "Descargar",
+    "brochure": "Brochure del proyecto (PDF)",
+    "brochureHint": "Generado con la información actual del proyecto"
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que más nos preguntan"
+  },
+  "lead": {
+    "eyebrow": "Contacto",
+    "title": "Recibe precios y disponibilidad",
+    "lead": "Te enviamos la lista de precios actualizada, planos y planes de pago en menos de 24 horas.",
+    "point1": "Lista de precios actualizada por villa",
+    "point2": "Planos y especificaciones",
+    "point3": "Visita presencial o virtual con un asesor",
+    "orWhatsapp": "¿Prefieres WhatsApp?"
+  },
+  "sticky": {
+    "label": "Barra de contacto del proyecto"
+  },
+  "related": {
+    "eyebrow": "Propiedades del proyecto",
+    "title": "Unidades publicadas"
+  },
+  "list": {
+    "eyebrow": "Proyectos",
+    "title": "Proyectos inmobiliarios en Punta Cana",
+    "lead": "Desarrollos seleccionados en preventa, en construcción y listos para entrega. Precios, planes de pago y disponibilidad actualizada.",
+    "units": "{count, plural, one {# unidad} other {# unidades}}",
+    "viewProject": "Ver proyecto",
+    "flagship": "Proyecto insignia",
+    "empty": "Pronto publicaremos nuevos proyectos.",
+    "delivery": "Entrega {date}"
+  },
+  "brochure": {
+    "keyFacts": "Datos clave",
+    "models": "Modelos",
+    "amenities": "Amenidades",
+    "paymentPlans": "Planes de pago",
+    "contact": "Contacto",
+    "priceFrom": "Precio desde",
+    "units": "Unidades",
+    "delivery": "Entrega",
+    "status": "Estado",
+    "location": "Ubicación",
+    "model": "Modelo",
+    "beds": "Hab.",
+    "baths": "Baños",
+    "built": "Constr. (m2)",
+    "lot": "Terreno (m2)",
+    "from": "Desde (USD)",
+    "planRow": "{down}% inicial · {during}% durante la obra ({installments} cuotas) · {delivery}% contra entrega",
+    "planRowSimple": "{down}% inicial · {during}% durante la obra · {delivery}% contra entrega",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "phone": "Teléfono",
+    "web": "Web",
+    "page": "Página {n} de {total}",
+    "disclaimer": "Precios, disponibilidad y especificaciones sujetos a cambio sin previo aviso. Información referencial."
+  }
+}

@@ -1,1 +1,87 @@
-{}
+{
+  "tabs": {
+    "label": "Calculators",
+    "payment": "Payment plan",
+    "mortgage": "Mortgage",
+    "roi": "Rental ROI"
+  },
+  "payment": {
+    "title": "Payment plan calculator",
+    "plan": "Payment plan",
+    "custom": "Custom",
+    "defaultPlan": "30/40/30 Plan",
+    "price": "Property price",
+    "down": "Down payment",
+    "during": "During construction",
+    "delivery": "On delivery",
+    "installments": "Monthly installments",
+    "installmentsCount": "{count, plural, =0 {No installments} one {# installment} other {# installments}}",
+    "monthly": "Monthly installment",
+    "singlePayment": "Single payment",
+    "noMonthly": "No installments during construction",
+    "atSigning": "At signing",
+    "breakdown": "Payment breakdown",
+    "total": "Total",
+    "disclaimer": "For reference only. Final amounts depend on the purchase agreement."
+  },
+  "mortgage": {
+    "title": "Mortgage calculator",
+    "price": "Property price",
+    "down": "Down payment",
+    "rate": "Annual interest rate",
+    "years": "Term",
+    "yearsValue": "{count, plural, one {# year} other {# years}}",
+    "monthly": "Estimated monthly payment",
+    "loan": "Loan amount",
+    "totalInterest": "Total interest",
+    "totalPaid": "Total paid",
+    "disclaimer": "Actual terms depend on the lender and your credit profile."
+  },
+  "roi": {
+    "title": "Vacation rental returns",
+    "price": "Purchase price",
+    "nightly": "Average nightly rate",
+    "occupancy": "Annual occupancy",
+    "management": "Management fee",
+    "hoa": "Monthly maintenance / HOA",
+    "gross": "Gross annual income",
+    "managementCost": "Management",
+    "hoaAnnual": "Annual maintenance",
+    "net": "Net annual income",
+    "roi": "Net ROI",
+    "grossYield": "Gross yield",
+    "nights": "{count} booked nights per year"
+  },
+  "gallery": {
+    "open": "Open gallery",
+    "close": "Close gallery",
+    "prev": "Previous image",
+    "next": "Next image",
+    "counter": "{current} / {total}",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "thumbnail": "View image {n}",
+    "imageAlt": "{title} — image {n}"
+  },
+  "floorplan": {
+    "zoomIn": "Zoom in on plan",
+    "zoomOut": "Zoom out of plan",
+    "reset": "Reset view",
+    "soon": "Floor plan coming soon",
+    "plan": "Plan {n}",
+    "dragHint": "Drag to pan",
+    "alt": "Floor plan of {title}"
+  },
+  "video": {
+    "soon": "Virtual tour coming soon",
+    "soonText": "We're preparing the video and 360° walkthrough. Book a virtual visit with an advisor in the meantime.",
+    "play": "Play video: {title}",
+    "load": "Load tour: {title}",
+    "privacy": "Content loads from an external service when you click."
+  },
+  "share": {
+    "label": "Share",
+    "whatsapp": "Share on WhatsApp",
+    "native": "More options"
+  }
+}

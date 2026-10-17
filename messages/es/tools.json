@@ -1,1 +1,87 @@
-{}
+{
+  "tabs": {
+    "label": "Calculadoras",
+    "payment": "Plan de pago",
+    "mortgage": "Hipoteca",
+    "roi": "Rentabilidad"
+  },
+  "payment": {
+    "title": "Calculadora de plan de pago",
+    "plan": "Plan de pago",
+    "custom": "Personalizado",
+    "defaultPlan": "Plan 30/40/30",
+    "price": "Precio de la propiedad",
+    "down": "Inicial",
+    "during": "Durante la construcción",
+    "delivery": "Contra entrega",
+    "installments": "Cuotas mensuales",
+    "installmentsCount": "{count, plural, =0 {Sin cuotas} one {# cuota} other {# cuotas}}",
+    "monthly": "Cuota mensual",
+    "singlePayment": "Pago único",
+    "noMonthly": "Sin cuotas durante la obra",
+    "atSigning": "A la firma",
+    "breakdown": "Distribución del pago",
+    "total": "Total",
+    "disclaimer": "Cálculo referencial. Los montos finales dependen del contrato de promesa de compraventa."
+  },
+  "mortgage": {
+    "title": "Calculadora de hipoteca",
+    "price": "Precio de la propiedad",
+    "down": "Inicial",
+    "rate": "Tasa de interés anual",
+    "years": "Plazo",
+    "yearsValue": "{count, plural, one {# año} other {# años}}",
+    "monthly": "Pago mensual estimado",
+    "loan": "Monto del préstamo",
+    "totalInterest": "Intereses totales",
+    "totalPaid": "Total pagado",
+    "disclaimer": "Las condiciones reales dependen de la entidad financiera y de tu perfil crediticio."
+  },
+  "roi": {
+    "title": "Rentabilidad por alquiler vacacional",
+    "price": "Precio de compra",
+    "nightly": "Tarifa promedio por noche",
+    "occupancy": "Ocupación anual",
+    "management": "Comisión de administración",
+    "hoa": "Mantenimiento / HOA mensual",
+    "gross": "Ingreso bruto anual",
+    "managementCost": "Administración",
+    "hoaAnnual": "Mantenimiento anual",
+    "net": "Ingreso neto anual",
+    "roi": "ROI neto",
+    "grossYield": "Rendimiento bruto",
+    "nights": "{count} noches ocupadas al año"
+  },
+  "gallery": {
+    "open": "Abrir galería",
+    "close": "Cerrar galería",
+    "prev": "Imagen anterior",
+    "next": "Imagen siguiente",
+    "counter": "{current} / {total}",
+    "zoomIn": "Ampliar imagen",
+    "zoomOut": "Reducir imagen",
+    "thumbnail": "Ver imagen {n}",
+    "imageAlt": "{title} — imagen {n}"
+  },
+  "floorplan": {
+    "zoomIn": "Acercar plano",
+    "zoomOut": "Alejar plano",
+    "reset": "Restablecer vista",
+    "soon": "Plano próximamente",
+    "plan": "Plano {n}",
+    "dragHint": "Arrastra para mover",
+    "alt": "Plano de {title}"
+  },
+  "video": {
+    "soon": "Tour virtual próximamente",
+    "soonText": "Estamos preparando el recorrido en video y 360°. Agenda una visita virtual con un asesor mientras tanto.",
+    "play": "Reproducir video: {title}",
+    "load": "Cargar tour: {title}",
+    "privacy": "El contenido se carga desde un servicio externo al hacer clic."
+  },
+  "share": {
+    "label": "Compartir",
+    "whatsapp": "Compartir por WhatsApp",
+    "native": "Más opciones"
+  }
+}
