@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
   return buildMetadata({ locale, pathname: "/", title: t("title"), description: t("description") });
 }
 
-const HERO_VILLA = path.join(process.cwd(), "public", "images", "hero-villa.png");
+const HERO_VILLA = path.join(process.cwd(), "public", "images", "hero-villa.webp");
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
@@ -45,6 +45,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   const [units, models] = flagship ? await Promise.all([getUnits(flagship.id), getModels(flagship.id)]) : [[], []];
 
   const zones = [...new Set([...properties.map((p) => p.zone), ...projects.map((p) => p.zone)])].filter(Boolean).sort();
+  const villaSrc = fs.existsSync(HERO_VILLA) ? "/images/hero-villa.webp" : null;
   const featuredProps = properties.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.is_flagship);
   const available = units.filter((u) => u.status === "available").length;
@@ -80,10 +81,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
   return (
     <>
-      <Hero title={tr(settings.hero.title, locale)} subtitle={tr(settings.hero.subtitle, locale)} zones={zones} villaSrc={fs.existsSync(HERO_VILLA) ? "/images/hero-villa.png" : null} />
+      <Hero title={tr(settings.hero.title, locale)} subtitle={tr(settings.hero.subtitle, locale)} zones={zones} villaSrc={villaSrc} />
 
       {/* 2. Featured project — pinned scroll story */}
-      {flagship && <FeaturedProject priceFrom={flagship.price_from} statuses={units.map((u) => u.status)} isPlaceholder={flagship.is_placeholder} />}
+      {flagship && <FeaturedProject priceFrom={flagship.price_from} statuses={units.map((u) => u.status)} isPlaceholder={flagship.is_placeholder} villaSrc={villaSrc} />}
 
       {/* 3. Animated figures */}
       {flagship && (

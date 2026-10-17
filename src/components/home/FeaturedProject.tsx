@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScro
 import { useTranslations } from "next-intl";
 import { ArrowRight, Dumbbell, Laptop, MapPin, Plane, ShieldCheck, Trees, Umbrella, Waves } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 import { IsoVilla } from "@/components/ui/IsoVilla";
 import { PlaceholderBadge } from "@/components/ui/PlaceholderBadge";
 import { Price } from "@/components/ui/Price";
@@ -18,9 +19,10 @@ type Props = {
   priceFrom: number | null;
   statuses: UnitStatus[];
   isPlaceholder: boolean;
+  villaSrc?: string | null;
 };
 
-function Visual({ step, statuses }: { step: number; statuses: UnitStatus[] }) {
+function Visual({ step, statuses, villaSrc }: { step: number; statuses: UnitStatus[]; villaSrc?: string | null }) {
   const tu = useTranslations("common.unitStatus");
   const tl = useTranslations("home.location.points");
   if (step === 0)
@@ -51,7 +53,13 @@ function Visual({ step, statuses }: { step: number; statuses: UnitStatus[] }) {
   if (step === 1)
     return (
       <div className="relative grid aspect-square w-full place-items-center rounded-[2rem] bg-gradient-to-br from-white to-sand-2">
-        <IsoVilla className="w-[92%]" />
+        {villaSrc ? (
+          <div className="absolute inset-0 overflow-hidden rounded-[2rem] bg-[radial-gradient(90%_80%_at_50%_40%,#1d3d68_0%,#0b1f3a_70%)]">
+            <Image src={villaSrc} alt="" fill sizes="(min-width: 1024px) 520px, 90vw" className="object-contain p-[6%]" />
+          </div>
+        ) : (
+          <IsoVilla className="w-[92%]" />
+        )}
       </div>
     );
   if (step === 2) {
@@ -134,7 +142,7 @@ function StepText({ step, available }: { step: number; available: number }) {
   );
 }
 
-export function FeaturedProject({ priceFrom, statuses, isPlaceholder }: Props) {
+export function FeaturedProject({ priceFrom, statuses, isPlaceholder, villaSrc }: Props) {
   const t = useTranslations("home.featured");
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -173,7 +181,7 @@ export function FeaturedProject({ priceFrom, statuses, isPlaceholder }: Props) {
           {STEPS.map((_, i) => (
             <div key={i} className="grid items-center gap-8 lg:grid-cols-2">
               <StepText step={i} available={available} />
-              <Visual step={i} statuses={statuses} />
+              <Visual step={i} statuses={statuses} villaSrc={villaSrc} />
             </div>
           ))}
         </div>
@@ -207,7 +215,7 @@ export function FeaturedProject({ priceFrom, statuses, isPlaceholder }: Props) {
                   exit={{ opacity: 0, scale: 1.03 }}
                   transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <Visual step={step} statuses={statuses} />
+                  <Visual step={step} statuses={statuses} villaSrc={villaSrc} />
                 </motion.div>
               </AnimatePresence>
             </div>

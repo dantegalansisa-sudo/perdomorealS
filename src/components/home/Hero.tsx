@@ -68,7 +68,21 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
   }, [mx, my, reduce]);
 
   const villa = villaSrc ? (
-    <Image src={villaSrc} alt="" width={1200} height={900} priority sizes="(min-width: 1024px) 52vw, 96vw" className="h-auto w-full drop-shadow-[0_50px_50px_rgba(0,0,0,0.45)]" />
+    <div className="relative">
+      {/* warm light behind the house + soft contact shadow so it sits on the navy background */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-[12%] top-[18%] bottom-[22%] -z-10 rounded-full bg-[radial-gradient(closest-side,rgba(232,186,110,0.38),rgba(232,186,110,0.12)_55%,transparent)] blur-2xl" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-[8%] -bottom-[3%] -z-10 h-[14%] rounded-[50%] bg-black/45 blur-2xl" />
+      <Image
+        src={villaSrc}
+        alt={t("villaAlt")}
+        width={1448}
+        height={1039}
+        priority
+        fetchPriority="high"
+        sizes="(min-width: 1280px) 46vw, (min-width: 1024px) 50vw, 92vw"
+        className="h-auto w-full drop-shadow-[0_30px_40px_rgba(0,0,0,0.35)]"
+      />
+    </div>
   ) : (
     <div className="relative">
       <IsoVilla onDark className="h-auto w-full" title={t("renderSoon")} />
@@ -106,10 +120,10 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
             <GiantWord />
           </motion.div>
 
-          <div className="relative grid grid-cols-1 gap-x-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+          <div className="relative grid grid-cols-1 gap-x-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)]">
             {/* Villa — overlaps the bottom of the giant word, like the reference */}
-            <div className="relative z-0 -mt-[5vw] sm:-mt-[8vw] lg:order-2 lg:-mt-[13vw] xl:-mt-[12vw]">
-              <motion.div style={{ y: villaY }} className="mx-auto w-[88%] max-w-[560px] lg:w-full lg:max-w-none">
+            <div className="relative z-0 -mt-[5vw] sm:-mt-[8vw] lg:order-2 lg:-mt-[15vw] xl:-mt-[14vw]">
+              <motion.div style={{ y: villaY }} className="mx-auto w-[96%] max-w-[600px] lg:-mr-[1%] lg:ml-auto lg:w-[108%] lg:max-w-none">
                 <motion.div style={{ x: sx, y: sy }}>
                   <div className="hero-scale" style={{ animationDelay: "0.15s" }}>
                     <div className={reduce ? "" : "animate-float"}>{villa}</div>

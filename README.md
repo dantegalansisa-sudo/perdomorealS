@@ -107,7 +107,7 @@ Abre http://localhost:3000 (redirige a `/es` o `/en` según el navegador).
 Para el WhatsApp prellenado del proyecto: **Admin → Ajustes → Mensajes de WhatsApp por proyecto**.
 
 ### Imagen 3D del hero
-Coloca un PNG transparente (aprox. 4:3, ~1600×1200) en `public/images/hero-villa.png` y vuelve a desplegar: reemplaza automáticamente la ilustración de ejemplo con el mismo encuadre.
+La imagen actual está en `public/images/hero-villa.webp` (WebP con transparencia, 1448×1039, optimizada desde el PNG original). Para cambiarla, reemplaza ese archivo por otra imagen sin fondo de proporción similar (~4:3) y vuelve a desplegar; Next.js genera automáticamente versiones AVIF/WebP del tamaño adecuado para cada pantalla. Si quitas el archivo, el hero vuelve a mostrar la ilustración de ejemplo.
 
 ---
 
