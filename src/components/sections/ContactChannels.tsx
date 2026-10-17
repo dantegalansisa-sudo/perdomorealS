@@ -9,7 +9,7 @@ export function ContactChannels({ phone, email }: { phone: string; email: string
   const t = useTranslations("pages.contact");
   const { href, onClick } = useWhatsApp();
   const items = [
-    { label: t("whatsapp"), value: phone, href, icon: <WhatsAppIcon className="size-5" />, onClick, external: true, tone: "bg-[#25D366] text-white" },
+    { label: t("whatsapp"), value: phone, href, icon: <WhatsAppIcon className="size-5" />, onClick, external: true, tone: "bg-whatsapp text-white" },
     { label: t("phone"), value: phone, href: `tel:${phone.replace(/[^\d+]/g, "")}`, icon: <Phone className="size-5" />, onClick: () => track("phone_click", { location: "contact" }), tone: "bg-navy text-white" },
     { label: t("email"), value: email, href: `mailto:${email}`, icon: <Mail className="size-5" />, onClick: () => track("email_click", { location: "contact" }), tone: "bg-gold text-navy" },
   ];

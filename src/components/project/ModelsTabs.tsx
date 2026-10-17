@@ -92,7 +92,7 @@ export function ModelsTabs({ projectId, projectName, models, units }: { projectI
                 <h3 className="text-5xl text-navy sm:text-6xl">{m.name}</h3>
                 <PlaceholderBadge show={m.is_placeholder} />
               </div>
-              <p className="mt-3 text-sm font-bold text-available">{t("availableUnits", { count: available })}</p>
+              <p className="mt-3 text-sm font-bold text-available-ink">{t("availableUnits", { count: available })}</p>
               <p className="mt-5 text-xs font-bold tracking-[0.18em] text-stone uppercase">{t("fromPrice")}</p>
               <Price usd={m.price_from} className="font-display text-4xl tracking-wide text-navy sm:text-5xl" />
               <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">

@@ -12,7 +12,7 @@ export function PlaceholderBadge({ show = true, className }: { show?: boolean; c
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1 rounded-full border border-dashed border-gold/60 bg-gold-soft/40 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-gold-dark",
+        "inline-flex items-center gap-1 rounded-full border border-dashed border-gold/60 bg-gold-soft/40 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-[#6b5320]",
         className
       )}
       title={t("sampleInfoTooltip")}

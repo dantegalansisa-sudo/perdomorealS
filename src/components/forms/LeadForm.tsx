@@ -162,21 +162,21 @@ export function LeadForm({
             {t("name")} *
           </label>
           <input id={`${id}-name`} name="name" autoComplete="name" required className={fieldCls("name")} aria-invalid={!!errors.name} />
-          {err("name") && <p className="mt-1 text-xs text-sold">{err("name")}</p>}
+          {err("name") && <p className="mt-1 text-xs text-sold-ink">{err("name")}</p>}
         </div>
         <div>
           <label htmlFor={`${id}-email`} className={labelCls}>
             {t("email")} *
           </label>
           <input id={`${id}-email`} name="email" type="email" autoComplete="email" required className={fieldCls("email")} aria-invalid={!!errors.email} />
-          {err("email") && <p className="mt-1 text-xs text-sold">{err("email")}</p>}
+          {err("email") && <p className="mt-1 text-xs text-sold-ink">{err("email")}</p>}
         </div>
         <div>
           <label htmlFor={`${id}-phone`} className={labelCls}>
             {t("phone")} *
           </label>
           <input id={`${id}-phone`} name="phone" type="tel" autoComplete="tel" required placeholder="+1 809 000 0000" className={fieldCls("phone")} aria-invalid={!!errors.phone} />
-          {err("phone") && <p className="mt-1 text-xs text-sold">{err("phone")}</p>}
+          {err("phone") && <p className="mt-1 text-xs text-sold-ink">{err("phone")}</p>}
         </div>
         <div>
           <label htmlFor={`${id}-project`} className={labelCls}>
@@ -212,7 +212,7 @@ export function LeadForm({
                 {t("visitDate")} *
               </label>
               <input id={`${id}-date`} name="visitDate" type="date" min={today} required className={fieldCls("visitDate")} />
-              {err("visitDate") && <p className="mt-1 text-xs text-sold">{err("visitDate")}</p>}
+              {err("visitDate") && <p className="mt-1 text-xs text-sold-ink">{err("visitDate")}</p>}
             </div>
             <div>
               <label htmlFor={`${id}-time`} className={labelCls}>
@@ -258,7 +258,7 @@ export function LeadForm({
         <input type="checkbox" name="consent" required className="mt-0.5 size-4 accent-[#C9A961]" />
         <span>{t("consent")}</span>
       </label>
-      {err("consent") && <p className="-mt-2 text-xs text-sold">{err("consent")}</p>}
+      {err("consent") && <p className="-mt-2 text-xs text-sold-ink">{err("consent")}</p>}
 
       {siteKey && <div ref={turnstileRef} />}
 
@@ -267,7 +267,7 @@ export function LeadForm({
         {type === "price" ? t("submitPrice") : type === "visit" ? t("submitVisit") : t("submit")}
       </button>
 
-      <p id={`${id}-status`} aria-live="polite" className="text-sm text-sold">
+      <p id={`${id}-status`} aria-live="polite" className="text-sm text-sold-ink">
         {status === "error" && t("errorGeneric")}
         {status === "rate_limit" && t("errorRateLimit")}
       </p>

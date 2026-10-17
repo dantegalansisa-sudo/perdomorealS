@@ -55,7 +55,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         actions={
           <>
             {phone && (
-              <a href={`https://wa.me/${phone}?text=${encodeURIComponent(waText)}`} target="_blank" rel="noreferrer" className="btn btn-sm bg-[#25D366] text-white hover:bg-[#1da851]">
+              <a href={`https://wa.me/${phone}?text=${encodeURIComponent(waText)}`} target="_blank" rel="noreferrer" className="btn btn-sm bg-whatsapp text-white hover:brightness-95">
                 <MessageCircle className="size-4" /> WhatsApp
               </a>
             )}

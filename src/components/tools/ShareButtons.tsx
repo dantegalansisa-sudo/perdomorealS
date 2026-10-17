@@ -57,7 +57,7 @@ export function ShareButtons({ title, url, className }: { title: string; url?: s
       <a href={wa} target="_blank" rel="noopener noreferrer" aria-label={t("whatsapp")} title={t("whatsapp")} className={btn}>
         <WhatsAppIcon className="size-4" />
       </a>
-      <button type="button" onClick={copy} aria-label={tc("copyLink")} title={tc("copyLink")} className={cn(btn, copied && "border-available text-available")}>
+      <button type="button" onClick={copy} aria-label={tc("copyLink")} title={tc("copyLink")} className={cn(btn, copied && "border-available text-available-ink")}>
         {copied ? <Check className="size-4" aria-hidden /> : <Link2 className="size-4" aria-hidden />}
       </button>
       {canShare && (
@@ -65,7 +65,7 @@ export function ShareButtons({ title, url, className }: { title: string; url?: s
           <Share2 className="size-4" aria-hidden />
         </button>
       )}
-      <span role="status" aria-live="polite" className={cn("text-xs font-bold text-available transition-opacity", copied ? "opacity-100" : "opacity-0")}>
+      <span role="status" aria-live="polite" className={cn("text-xs font-bold text-available-ink transition-opacity", copied ? "opacity-100" : "opacity-0")}>
         {copied ? tc("copied") : ""}
       </span>
     </div>

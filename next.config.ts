@@ -8,6 +8,8 @@ const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
   : "placeholder.supabase.co";
 
 const nextConfig: NextConfig = {
+  // Pin the workspace root (a stray lockfile in the user's home folder confuses detection).
+  outputFileTracingRoot: process.cwd(),
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [{ protocol: "https", hostname: supabaseHost, pathname: "/storage/v1/object/public/**" }],

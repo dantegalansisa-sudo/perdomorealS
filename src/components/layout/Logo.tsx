@@ -16,7 +16,7 @@ export function Logo({ className, light = false }: { className?: string; light?:
       <LogoMark className="size-9 shrink-0" />
       <span className="flex flex-col leading-none">
         <span className="font-display text-[1.35rem] tracking-[0.06em]">PERDOMO</span>
-        <span className="text-[0.56rem] font-bold tracking-[0.42em] text-gold-dark">REAL ESTATE</span>
+        <span className={cn("text-[0.56rem] font-bold tracking-[0.42em]", light ? "text-gold" : "text-[#7a5f24]")}>REAL ESTATE</span>
       </span>
     </span>
   );

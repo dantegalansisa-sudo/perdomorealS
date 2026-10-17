@@ -81,7 +81,7 @@ export function CompareView({ properties }: { properties: Property[] }) {
     { label: tc("specs.lot"), render: (p) => (p.lot_m2 ? `${p.lot_m2} m²` : "—") },
     ...COMPARE_AMENITIES.map((a) => ({
       label: tc(`amenities.${a}`),
-      render: (p: Property) => (p.amenities.includes(a) ? <Check className="size-5 text-available" aria-label="✓" /> : <Minus className="size-4 text-stone-light" aria-label="—" />),
+      render: (p: Property) => (p.amenities.includes(a) ? <Check className="size-5 text-available-ink" aria-label="✓" /> : <Minus className="size-4 text-stone-light" aria-label="—" />),
     })),
   ];
 

@@ -91,7 +91,7 @@ export function KeyFacts({ project, unitsCount, available, unitLabel, locale }: 
         <div key={f.label} className="bg-white px-4 py-4">
           <dt className="text-[10px] font-bold tracking-[0.18em] text-stone uppercase">{f.label}</dt>
           <dd className="mt-1 text-lg leading-tight font-extrabold text-navy">{f.value}</dd>
-          {f.sub && <dd className="mt-0.5 text-xs font-bold text-available">{f.sub}</dd>}
+          {f.sub && <dd className="mt-0.5 text-xs font-bold text-available-ink">{f.sub}</dd>}
         </div>
       ))}
     </dl>

@@ -251,9 +251,9 @@ export function PropertySearch({ properties, projects, lockedType }: Props) {
             {t("showFilters")}
             {count > 0 && <span className="grid size-5 place-items-center rounded-full bg-gold text-[10px] text-navy">{count}</span>}
           </button>
-          <p className="mr-auto text-sm font-semibold text-navy-soft" aria-live="polite">
+          <h2 className="mr-auto font-sans text-sm font-semibold tracking-normal text-navy-soft normal-case" aria-live="polite">
             {t("results", { count: results.length })}
-          </p>
+          </h2>
           <CurrencySwitcher />
           <label htmlFor="f-sort" className="sr-only">
             {t("sort")}

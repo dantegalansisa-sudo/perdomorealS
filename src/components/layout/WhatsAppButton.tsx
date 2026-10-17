@@ -44,7 +44,7 @@ export function WhatsAppFloat() {
       onClick={onClick}
       aria-label={t("whatsappAria")}
       className={cn(
-        "group fixed right-6 bottom-6 z-50 hidden items-center gap-2 rounded-full bg-[#25D366] p-4 text-white shadow-[0_18px_40px_-14px_rgba(37,211,102,0.8)] transition-transform hover:scale-105 md:flex"
+        "group fixed right-6 bottom-6 z-50 hidden items-center gap-2 rounded-full bg-whatsapp p-4 text-white shadow-[0_18px_40px_-14px_rgba(10,125,90,0.7)] transition-transform hover:scale-105 md:flex"
       )}
     >
       <WhatsAppIcon className="size-6" />

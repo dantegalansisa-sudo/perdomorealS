@@ -11,6 +11,8 @@ export const routing = defineRouting({
   locales,
   defaultLocale: "es",
   localePrefix: "always",
+  // hreflang is emitted per page in <head> (it knows translated entity slugs); no Link headers.
+  alternateLinks: false,
   pathnames: {
     "/": "/",
     "/villas-macao": {

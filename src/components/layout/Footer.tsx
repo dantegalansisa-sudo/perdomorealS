@@ -48,9 +48,7 @@ export async function Footer() {
 
   return (
     <footer className="relative mt-24 overflow-hidden bg-navy pb-28 text-white md:pb-10">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 -bottom-[0.18em] text-center font-display text-[24vw] leading-none text-white/[0.035] select-none">
-        PERDOMO
-      </div>
+      <div aria-hidden data-word="PERDOMO" className="pointer-events-none absolute inset-x-0 -bottom-[0.18em] text-center font-display text-[24vw] leading-none text-white/[0.035] select-none before:content-[attr(data-word)]" />
       <div className="container-x relative pt-20">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
           <div>

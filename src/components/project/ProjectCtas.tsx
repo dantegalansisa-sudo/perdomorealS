@@ -30,7 +30,7 @@ export function ProjectCtas({ projectId, interest, className }: { projectId: str
         <CalendarDays className="size-4 shrink-0" aria-hidden />
         {tc("scheduleVisit")}
       </button>
-      <a href={wa.href} onClick={wa.onClick} target="_blank" rel="noopener noreferrer" className="btn w-full bg-[#25D366] text-white hover:bg-[#1fb958] sm:w-auto">
+      <a href={wa.href} onClick={wa.onClick} target="_blank" rel="noopener noreferrer" className="btn w-full bg-whatsapp text-white hover:brightness-95 sm:w-auto">
         <WhatsAppIcon className="size-5" />
         {t("whatsapp")}
       </a>
@@ -43,7 +43,7 @@ export function ProjectWhatsAppLink({ projectId, label, className }: { projectId
   const wa = useWhatsApp(projectId);
   return (
     <a href={wa.href} onClick={wa.onClick} target="_blank" rel="noopener noreferrer" className={cn("inline-flex items-center gap-2 font-bold text-navy underline-offset-4 hover:underline", className)}>
-      <span className="grid size-9 place-items-center rounded-full bg-[#25D366] text-white">
+      <span className="grid size-9 place-items-center rounded-full bg-whatsapp text-white">
         <WhatsAppIcon className="size-4" />
       </span>
       {label}

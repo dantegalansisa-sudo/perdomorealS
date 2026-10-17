@@ -26,7 +26,7 @@ export function ContactWhatsApp() {
   const t = useTranslations("home.contact");
   const { href, onClick } = useWhatsApp();
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} className="btn bg-[#25D366] text-white hover:brightness-95">
+    <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} className="btn bg-whatsapp text-white hover:brightness-95">
       <WhatsAppIcon className="size-5" />
       {t("whatsapp")}
     </a>

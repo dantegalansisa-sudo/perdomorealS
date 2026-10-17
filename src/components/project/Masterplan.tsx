@@ -15,6 +15,8 @@ import { buildMasterplan, PLAN } from "./masterplan-geometry";
 import { selectUnit, unitSelection } from "./selection-store";
 
 export const STATUS_COLOR: Record<UnitStatus, string> = { available: "#3f8f6b", reserved: "#d29a2e", sold: "#b4534b" };
+/** Text-safe (AA contrast) variants of the status colors. */
+export const STATUS_INK: Record<UnitStatus, string> = { available: "#2b6b4e", reserved: "#8a5a0e", sold: "#973a33" };
 export const STATUSES: UnitStatus[] = ["available", "reserved", "sold"];
 const ZOOMS = [1, 1.5, 2, 2.75];
 
@@ -35,7 +37,7 @@ export function StatusPill({ status, className }: { status: UnitStatus; classNam
   return (
     <span
       className={cn("inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold tracking-wide whitespace-nowrap", className)}
-      style={{ background: `${STATUS_COLOR[status]}1f`, color: STATUS_COLOR[status] }}
+      style={{ background: `${STATUS_COLOR[status]}1f`, color: STATUS_INK[status] }}
     >
       <span className="size-1.5 rounded-full" style={{ background: STATUS_COLOR[status] }} aria-hidden />
       {t(`unitStatus.${status}`)}
@@ -101,12 +103,12 @@ export function Masterplan({ projectId, projectName, units, models }: { projectI
         <div className="mb-4 space-y-3">
           <div role="group" aria-label={t("filterStatus")} className="flex flex-wrap gap-2">
             <button type="button" className="chip" data-active={status === "all"} aria-pressed={status === "all"} onClick={() => setStatus("all")}>
-              {t("all")} <span className="text-stone tabular-nums">{units.length}</span>
+              {t("all")} <span className="text-navy-soft tabular-nums">{units.length}</span>
             </button>
             {STATUSES.map((s) => (
               <button key={s} type="button" className="chip" data-active={status === s} aria-pressed={status === s} onClick={() => setStatus(status === s ? "all" : s)}>
                 <span className="size-2.5 rounded-full" style={{ background: STATUS_COLOR[s] }} aria-hidden />
-                {tc(`unitStatus.${s}`)} <span className="text-stone tabular-nums">{counts[s]}</span>
+                {tc(`unitStatus.${s}`)} <span className="text-navy-soft tabular-nums">{counts[s]}</span>
               </button>
             ))}
           </div>
@@ -270,7 +272,7 @@ export function Masterplan({ projectId, projectName, units, models }: { projectI
               <dl className="mt-6 grid grid-cols-3 gap-2">
                 {STATUSES.map((s) => (
                   <div key={s} className="rounded-2xl bg-sand px-2 py-3">
-                    <dd className="font-display text-3xl" style={{ color: STATUS_COLOR[s] }}>
+                    <dd className="font-display text-3xl" style={{ color: STATUS_INK[s] }}>
                       {counts[s]}
                     </dd>
                     <dt className="text-[10px] font-bold tracking-wide text-stone uppercase">{tc(`unitStatus.${s}`)}</dt>

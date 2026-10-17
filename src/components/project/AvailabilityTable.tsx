@@ -9,7 +9,7 @@ import type { Unit, UnitStatus, VillaModel } from "@/lib/types";
 import { openLeadModal } from "@/lib/ui-store";
 import { cn } from "@/lib/utils";
 import { useMoney } from "@/components/tools/shared";
-import { STATUS_COLOR, STATUSES, StatusPill } from "./Masterplan";
+import { STATUS_COLOR, STATUS_INK, STATUSES, StatusPill } from "./Masterplan";
 import { selectUnit } from "./selection-store";
 
 type SortKey = "code" | "model" | "bedrooms" | "bathrooms" | "built" | "lot" | "price" | "status";
@@ -135,7 +135,7 @@ export function AvailabilityTable({ projectId, projectName, units, models }: { p
               <span className="size-2 rounded-full" style={{ background: STATUS_COLOR[s] }} aria-hidden />
               {tc(`unitStatus.${s}`)}
             </dt>
-            <dd className="font-display text-3xl" style={{ color: STATUS_COLOR[s] }}>
+            <dd className="font-display text-3xl" style={{ color: STATUS_INK[s] }}>
               {counts[s]}
             </dd>
           </div>

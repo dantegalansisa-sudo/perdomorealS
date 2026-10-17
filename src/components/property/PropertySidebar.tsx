@@ -31,7 +31,7 @@ export function PropertySidebar({ price, propertyId, projectId, interest, whatsa
           <CalendarDays className="size-4" aria-hidden />
           {tc("scheduleVisit")}
         </button>
-        <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} className="btn w-full bg-[#25D366] text-white hover:brightness-95">
+        <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} className="btn w-full bg-whatsapp text-white hover:brightness-95">
           <WhatsAppIcon className="size-5" />
           WhatsApp
         </a>

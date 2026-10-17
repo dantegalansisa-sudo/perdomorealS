@@ -8,14 +8,19 @@
   --color-navy-2: #14305a;
   --color-navy-soft: #2a3d5c;
   --color-gold: #c9a961;
-  --color-gold-dark: #a88b45;
+  --color-gold-dark: #85692a;
   --color-gold-soft: #ece0c3;
-  --color-stone: #7b7468;
+  --color-stone: #6f685d;
   --color-stone-light: #a8a196;
   --color-line: #e6e0d4;
+  --color-whatsapp: #0a7d5a;
   --color-available: #3f8f6b;
   --color-reserved: #d29a2e;
   --color-sold: #b4534b;
+  /* Darker status tones for text (WCAG AA on light backgrounds) */
+  --color-available-ink: #2b6b4e;
+  --color-reserved-ink: #8a5a0e;
+  --color-sold-ink: #973a33;
 
   --font-display: var(--font-anton), "Oswald", "Bebas Neue", Impact, sans-serif;
   --font-sans: var(--font-manrope), "Inter", system-ui, sans-serif;
