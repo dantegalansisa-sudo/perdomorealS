@@ -17,17 +17,17 @@ import { HeroSearchDesktop, HeroSearchMobile, QuickChips } from "./HeroSearch";
  */
 function GiantWord() {
   return (
-    <svg viewBox="0 0 1000 188" className="block h-auto w-full" aria-hidden focusable="false">
+    <svg viewBox="0 0 1000 226" className="block h-auto w-full" aria-hidden focusable="false">
       <defs>
         <linearGradient id="hero-word-fade" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#ffffff" stopOpacity="0.95" />
-          <stop offset="0.55" stopColor="#c9d4e3" stopOpacity="0.55" />
+          <stop offset="0.6" stopColor="#c9d4e3" stopOpacity="0.5" />
           <stop offset="1" stopColor="#c9d4e3" stopOpacity="0" />
         </linearGradient>
       </defs>
       <text
         x="0"
-        y="184"
+        y="222"
         textLength="1000"
         lengthAdjust="spacing"
         fill="url(#hero-word-fade)"
@@ -72,7 +72,7 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
   ) : (
     <div className="relative">
       <IsoVilla onDark className="h-auto w-full" title={t("renderSoon")} />
-      <span className="absolute right-[10%] bottom-[6%] rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-bold tracking-[0.16em] text-white/80 uppercase backdrop-blur">
+      <span className="absolute right-[10%] bottom-[6%] rounded-full border border-white/25 bg-navy/70 px-3 py-1 text-[10px] font-bold tracking-[0.16em] text-white uppercase backdrop-blur">
         {t("renderSoon")}
       </span>
     </div>

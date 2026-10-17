@@ -57,7 +57,7 @@ export const seedSettings: SiteSettings = {
   address: "Punta Cana, La Altagracia, República Dominicana",
   socials: { instagram: "https://instagram.com/", facebook: "https://facebook.com/", youtube: "https://youtube.com/" },
   hero: {
-    title: t("Luxury Real Estate in Punta Cana, Dominican Republic", "Luxury Real Estate in Punta Cana, Dominican Republic"),
+    title: t("Bienes raíces de lujo en Punta Cana, República Dominicana", "Luxury Real Estate in Punta Cana, Dominican Republic"),
     subtitle: t(
       "Villas, apartamentos y terrenos seleccionados en Macao, Bávaro y Cap Cana. Asesoría bilingüe de principio a fin.",
       "Hand-picked villas, apartments and land in Macao, Bávaro and Cap Cana. Bilingual guidance from first call to closing."

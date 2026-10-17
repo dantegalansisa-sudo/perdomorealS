@@ -96,7 +96,7 @@ export function PaymentPlanCalculator({ price, plans, compact = false }: { price
   );
 
   const results = (
-    <div className={cn("rounded-3xl bg-white", compact ? "" : "border border-line p-5 sm:p-6")}>
+    <div className={cn(compact ? "border-t border-line pt-6" : "rounded-3xl border border-line bg-white p-5 sm:p-6")}>
       {bar}
       <dl className="mt-4 divide-y divide-line">
         <ResultRow label={`${t("down")} · ${plan.down}%`} value={m.fmt(downAmt)} dot={COLORS.down} />
@@ -126,7 +126,7 @@ export function PaymentPlanCalculator({ price, plans, compact = false }: { price
 
   if (compact) {
     return (
-      <div className="space-y-5">
+      <div className="space-y-6 rounded-[2rem] border border-line bg-white p-5 shadow-[0_30px_60px_-40px_rgba(11,31,58,0.35)] sm:p-8">
         {planChips}
         <SliderField
           label={t("price")}
