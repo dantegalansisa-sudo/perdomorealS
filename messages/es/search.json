@@ -1,1 +1,63 @@
-{}
+{
+  "meta": {
+    "title": "Propiedades en venta en Punta Cana",
+    "description": "Busca villas, apartamentos, casas y terrenos en venta en Punta Cana con filtros por zona, precio, habitaciones, amenidades y más."
+  },
+  "eyebrow": "Buscador",
+  "title": "Propiedades en venta en Punta Cana",
+  "lead": "Filtra por zona, precio, tamaño y amenidades. Comparte tu búsqueda con el enlace.",
+  "filters": "Filtros",
+  "showFilters": "Filtros",
+  "apply": "Ver {count, plural, =0 {resultados} one {# resultado} other {# resultados}}",
+  "clear": "Limpiar filtros",
+  "keyword": "Palabra clave",
+  "keywordPlaceholder": "Ej. vista al mar, Cap Cana…",
+  "type": "Tipo de propiedad",
+  "zone": "Zona",
+  "anyZone": "Todas las zonas",
+  "price": "Rango de precio",
+  "bedrooms": "Habitaciones",
+  "bathrooms": "Baños",
+  "any": "Todas",
+  "built": "m² de construcción",
+  "lot": "m² de terreno",
+  "min": "Mín.",
+  "max": "Máx.",
+  "status": "Estado",
+  "amenities": "Amenidades",
+  "project": "Proyecto",
+  "anyProject": "Todos los proyectos",
+  "sort": "Ordenar",
+  "sorts": { "newest": "Más recientes", "price_asc": "Precio: menor a mayor", "price_desc": "Precio: mayor a menor", "area_desc": "Mayor m²" },
+  "views": { "grid": "Cuadrícula", "list": "Lista", "map": "Mapa" },
+  "results": "{count, plural, =0 {Sin resultados} one {# propiedad} other {# propiedades}}",
+  "empty": "No encontramos propiedades con estos filtros.",
+  "emptyCta": "Cuéntanos qué buscas y te enviamos opciones",
+  "category": {
+    "villa": {
+      "title": "Villas en venta en Punta Cana",
+      "lead": "Villas con piscina privada en comunidades cerradas, frente al mar o cerca de campos de golf en Macao, Bávaro, Cap Cana y Uvero Alto.",
+      "metaTitle": "Villas en venta en Punta Cana | Con piscina privada",
+      "metaDescription": "Villas en venta en Punta Cana, Macao, Cap Cana y Uvero Alto. Preventa y entrega inmediata, con piscina privada y planes de pago."
+    },
+    "apartment": {
+      "title": "Apartamentos en venta en Punta Cana",
+      "lead": "Apartamentos y penthouses listos o en preventa, ideales para vivir o para alquiler vacacional en Bávaro, Cap Cana y Los Corales.",
+      "metaTitle": "Apartamentos en venta en Punta Cana | Preventa y entrega inmediata",
+      "metaDescription": "Apartamentos en venta en Punta Cana: Bávaro, Cap Cana, Los Corales. Opciones amuebladas, con vista al mar y planes de pago."
+    },
+    "house": {
+      "title": "Casas en venta en Punta Cana",
+      "lead": "Casas familiares en comunidades planificadas con seguridad, áreas verdes y servicios cercanos.",
+      "metaTitle": "Casas en venta en Punta Cana | Comunidades cerradas",
+      "metaDescription": "Casas en venta en Punta Cana, Vista Cana y Bávaro, en comunidades cerradas con seguridad, golf y áreas verdes."
+    },
+    "land": {
+      "title": "Terrenos en venta en Punta Cana",
+      "lead": "Solares residenciales y comerciales con título, cerca de la playa o sobre avenidas principales.",
+      "metaTitle": "Terrenos en venta en Punta Cana | Residenciales y comerciales",
+      "metaDescription": "Terrenos en venta en Punta Cana y Macao, residenciales y comerciales, con título y acceso a servicios."
+    },
+    "related": "Explora otras categorías"
+  }
+}

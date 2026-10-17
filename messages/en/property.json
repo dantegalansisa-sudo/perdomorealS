@@ -1,1 +1,16 @@
-{}
+{
+  "overview": "Overview",
+  "specs": "Features",
+  "amenities": "Amenities",
+  "tour": "Virtual tour & video",
+  "floorplans": "Floor plans",
+  "location": "Location",
+  "calculators": "Calculators",
+  "related": "Similar properties",
+  "partOf": "Part of",
+  "viewProject": "View project",
+  "interested": "Interested in this property?",
+  "interestedText": "Get the updated price, payment plan and availability.",
+  "approxLocation": "Approximate location. The exact address is shared when you book a visit.",
+  "reference": "Ref."
+}

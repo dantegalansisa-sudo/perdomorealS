@@ -1,1 +1,97 @@
-{}
+{
+  "about": {
+    "metaTitle": "About us",
+    "metaDescription": "Meet Perdomo Real Estate: bilingual real estate advisory in Punta Cana for local and international buyers.",
+    "eyebrow": "About us",
+    "title": "Punta Cana real estate, with judgment",
+    "lead": "Perdomo Real Estate helps buyers and investors find the right property in Punta Cana, with clear information and a personal touch.",
+    "storyTitle": "How we work",
+    "story": "Sample text. Perdomo Real Estate's real story will go here: who we are, how the company started and what makes us different. We believe buying property in the Caribbean should be exciting and safe. That's why we select projects carefully, explain every step and connect you with independent professionals when you need them.",
+    "valuesTitle": "What guides us",
+    "values": {
+      "clarity": { "title": "Clarity", "text": "Complete information on prices, timelines and costs before you decide." },
+      "closeness": { "title": "Closeness", "text": "A dedicated advisor who answers via WhatsApp, phone or in person." },
+      "care": { "title": "Judgment", "text": "We'd rather recommend fewer options — but the right ones." }
+    },
+    "teamTitle": "Team",
+    "teamText": "Team photos and profiles coming soon.",
+    "member": "Real estate advisor",
+    "cta": "Talk to an advisor"
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Contact Perdomo Real Estate via WhatsApp, phone or email. Book an in-person or virtual tour of properties in Punta Cana.",
+    "eyebrow": "Contact",
+    "title": "Let's talk",
+    "lead": "Write, call or book an in-person or virtual visit. We reply in English and Spanish.",
+    "whatsapp": "WhatsApp",
+    "phone": "Phone",
+    "email": "Email",
+    "office": "Office",
+    "hours": "Hours",
+    "hoursValue": "Monday to Saturday, 9:00 a.m. – 6:00 p.m. (Dominican Republic time)",
+    "formTitle": "Send us a message"
+  },
+  "blog": {
+    "metaTitle": "Punta Cana real estate blog",
+    "metaDescription": "Guides to buying, investing and living in Punta Cana: areas, legal processes, payment plans and vacation rentals.",
+    "eyebrow": "Blog",
+    "title": "Guides to buying & investing in Punta Cana",
+    "lead": "Practical articles on areas, buying processes, legal matters and returns.",
+    "all": "All",
+    "categories": { "guias": "Guides", "zonas": "Areas", "inversion": "Investing", "legal": "Legal", "noticias": "News" },
+    "related": "Keep reading",
+    "by": "By",
+    "ctaTitle": "Ready for the next step?",
+    "ctaText": "We'll send you options that match your budget and goals.",
+    "back": "Back to the blog"
+  },
+  "favorites": {
+    "metaTitle": "My favorites",
+    "metaDescription": "Your saved properties at Perdomo Real Estate.",
+    "eyebrow": "Favorites",
+    "title": "Your saved properties",
+    "lead": "Your favorites are stored on this device.",
+    "empty": "You haven't saved any properties yet. Tap the heart on any property to save it here.",
+    "browse": "Explore properties",
+    "compare": "Compare selected",
+    "ask": "Ask about my favorites"
+  },
+  "compare": {
+    "metaTitle": "Compare properties",
+    "metaDescription": "Compare up to 3 properties side by side: price, size, bedrooms and amenities.",
+    "eyebrow": "Compare",
+    "title": "Compare properties",
+    "lead": "Up to 3 properties side by side.",
+    "empty": "Add properties to compare using the arrows icon on each card.",
+    "browse": "Explore properties",
+    "clear": "Clear comparison",
+    "remove": "Remove",
+    "pricePerM2": "Price per m²",
+    "feature": "Feature"
+  },
+  "legal": {
+    "sampleNotice": "Sample legal text. It must be reviewed and approved by an attorney before the site goes live.",
+    "updated": "Last updated",
+    "privacy": {
+      "title": "Privacy policy",
+      "metaDescription": "How Perdomo Real Estate collects, uses and protects your personal data.",
+      "body": "<h2>1. Controller</h2><p>Perdomo Real Estate is responsible for the personal data you provide through this website.</p><h2>2. Data we collect</h2><p>Name, email, phone/WhatsApp, project of interest, budget and the message you send through our forms, plus browsing data when you accept analytics cookies.</p><h2>3. Purpose</h2><p>To answer your requests, send you property information, schedule visits and improve our services.</p><h2>4. Legal basis</h2><p>Your consent when submitting a form and our legitimate interest in handling your request.</p><h2>5. Retention</h2><p>We keep your data while a business relationship exists or until you ask us to delete it.</p><h2>6. Your rights</h2><p>You can request access, correction or deletion of your data by writing to our contact email.</p><h2>7. Providers</h2><p>We use hosting, database and email providers that process data on our behalf with appropriate safeguards.</p>"
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "metaDescription": "Which cookies the Perdomo Real Estate website uses and how to manage them.",
+      "body": "<h2>What are cookies?</h2><p>Small files stored in your browser to remember information about your visit.</p><h2>Cookies we use</h2><ul><li><strong>Technical (necessary):</strong> remember your language, currency, favorites and consent choices. Stored locally on your device.</li><li><strong>Analytics (optional):</strong> Google Tag Manager / Google Analytics, only if you accept, to measure site usage.</li></ul><h2>How to manage them</h2><p>You can change your choice at any time via the “Cookie preferences” link in the footer, or delete cookies in your browser settings.</p>"
+    },
+    "terms": {
+      "title": "Terms & conditions",
+      "metaDescription": "Terms of use of the Perdomo Real Estate website.",
+      "body": "<h2>1. Purpose</h2><p>This site provides information about properties and real estate projects in Punta Cana for informational purposes.</p><h2>2. Use of the site</h2><p>You agree to use the site lawfully and not to submit false information through the forms.</p><h2>3. Intellectual property</h2><p>Texts, designs, logos and images belong to Perdomo Real Estate or their respective owners.</p><h2>4. Liability</h2><p>Published information is for reference only and may change without notice. It is not a binding offer.</p><h2>5. Governing law</h2><p>These terms are governed by the laws of the Dominican Republic.</p>"
+    },
+    "disclaimer": {
+      "title": "Property information notice",
+      "metaDescription": "Notice about prices, availability, images and calculations published on the site.",
+      "body": "<h2>Reference information</h2><p>Prices, availability, areas, floor plans, images, renders and amenities are for reference only and may change without notice. Always confirm current information with an advisor.</p><h2>Renders and images</h2><p>Images and renders may be illustrative and not represent the final product.</p><h2>Calculators</h2><p>Payment plan, mortgage and rental-return calculator results are illustrative estimates. They are not financial advice, a credit offer or a guarantee of returns.</p><h2>Sample information</h2><p>Content marked “Sample information” is illustrative and will be replaced with real information.</p>"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 "use client";
+import { Fragment } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { EASE } from "./easings";
 
@@ -33,17 +34,18 @@ export function RevealText({
           {line.split(" ").map((word) => {
             const i = wordIndex++;
             return (
-              <span key={i} className="inline-block overflow-hidden pb-[0.06em] align-bottom">
-                <motion.span
-                  className="inline-block will-change-transform"
-                  initial={reduce ? false : { y: "110%", rotate: 2 }}
-                  {...trigger}
-                  transition={{ duration: 0.85, delay: delay + i * 0.06, ease: EASE.premium }}
-                >
-                  {word}
-                </motion.span>
-                {" "}
-              </span>
+              <Fragment key={i}>
+                <span className="inline-block overflow-hidden pb-[0.06em] align-bottom">
+                  <motion.span
+                    className="inline-block will-change-transform"
+                    initial={reduce ? false : { y: "110%", rotate: 2 }}
+                    {...trigger}
+                    transition={{ duration: 0.85, delay: delay + i * 0.06, ease: EASE.premium }}
+                  >
+                    {word}
+                  </motion.span>
+                </span>{" "}
+              </Fragment>
             );
           })}
         </span>

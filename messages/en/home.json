@@ -1,1 +1,194 @@
-{}
+{
+  "meta": {
+    "title": "Perdomo Real Estate | Luxury villas and properties in Punta Cana",
+    "description": "Villas, apartments, houses and land for sale in Punta Cana and Macao. The 89 Villas in Macao project, payment plans and bilingual guidance."
+  },
+  "hero": {
+    "eyebrow": "Macao · Bávaro · Cap Cana",
+    "renderSoon": "Render coming soon",
+    "location": "Location",
+    "type": "Type",
+    "budget": "Budget",
+    "anyLocation": "Any area",
+    "anyType": "Any type",
+    "anyBudget": "No limit",
+    "search": "Search",
+    "searchMobile": "What are you looking for?",
+    "filters": "Search filters",
+    "showResults": "Show properties",
+    "quick": "Quick searches:",
+    "chips": {
+      "villasMacao": "Macao villas",
+      "apartments": "Apartments",
+      "land": "Land",
+      "houses": "Houses"
+    },
+    "budgets": {
+      "300000": "Up to US$300k",
+      "500000": "Up to US$500k",
+      "1000000": "Up to US$1M",
+      "any": "Over US$1M"
+    },
+    "scroll": "Scroll"
+  },
+  "featured": {
+    "eyebrow": "Featured project",
+    "title": "89 Villas in Macao",
+    "cta": "Discover the project",
+    "steps": {
+      "location": {
+        "label": "Location",
+        "title": "5 minutes from Macao Beach",
+        "text": "One of Punta Cana's most unspoiled beaches, connected to Bávaro and the airport by the Coral highway."
+      },
+      "villa": {
+        "label": "The villa",
+        "title": "Three models, private pool",
+        "text": "Brisa, Coral and Arena villas with 2 to 4 bedrooms, contemporary tropical design and a pool on every lot."
+      },
+      "amenities": {
+        "label": "Amenities",
+        "title": "Resort living, every day",
+        "text": "Clubhouse, gym, coworking, green areas, 24/7 security and controlled access."
+      },
+      "availability": {
+        "label": "Availability",
+        "title": "{available} villas available",
+        "text": "Explore the interactive masterplan with lot-by-lot live availability."
+      }
+    }
+  },
+  "stats": {
+    "available": "Villas available",
+    "models": "Villa models",
+    "beach": "Minutes to the beach",
+    "built": "m² built area up to",
+    "delivery": "Estimated delivery"
+  },
+  "categories": {
+    "eyebrow": "Browse by category",
+    "title": "Find your place in the Caribbean",
+    "count": "{count, plural, =0 {Coming soon} one {# property} other {# properties}}",
+    "projectsCount": "{count, plural, one {# project} other {# projects}}"
+  },
+  "properties": {
+    "eyebrow": "Selection",
+    "title": "Featured properties",
+    "lead": "A curated selection of villas, apartments and land in Punta Cana's best areas.",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "why": {
+    "eyebrow": "Why Perdomo",
+    "title": "Guidance that puts your investment first",
+    "items": {
+      "curated": {
+        "title": "Curated selection",
+        "text": "We only present projects and properties we've reviewed: location, developer, paperwork and potential."
+      },
+      "bilingual": {
+        "title": "Bilingual service",
+        "text": "We work with you in English or Spanish, via WhatsApp, video call or in person."
+      },
+      "remote": {
+        "title": "Buy remotely",
+        "text": "Virtual tours, digital signatures and power-of-attorney processes so you can buy from home."
+      },
+      "legal": {
+        "title": "Legal support",
+        "text": "We connect you with independent attorneys for due diligence and closing."
+      },
+      "transparent": {
+        "title": "Transparent information",
+        "text": "Clear prices, payment plans and availability, updated from the developer."
+      },
+      "after": {
+        "title": "After the purchase",
+        "text": "We guide you on property management, vacation rentals and maintenance."
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Buying process",
+    "title": "From the first call to getting your keys",
+    "lead": "A clear process, designed for international buyers too.",
+    "international": "Buying from abroad? You can complete the entire process remotely with virtual tours and a power of attorney.",
+    "steps": {
+      "1": {
+        "title": "First conversation",
+        "text": "We understand your goal — living, vacationing or investing — and your budget."
+      },
+      "2": {
+        "title": "Shortlist & visits",
+        "text": "We present options and schedule in-person or virtual tours."
+      },
+      "3": {
+        "title": "Reservation",
+        "text": "You secure the unit with a deposit and receive the project documents."
+      },
+      "4": {
+        "title": "Due diligence",
+        "text": "An independent attorney reviews titles, permits and the contract."
+      },
+      "5": {
+        "title": "Contract & payments",
+        "text": "You sign the agreement and follow the agreed payment plan."
+      },
+      "6": {
+        "title": "Delivery",
+        "text": "You receive your property, the title and, if you wish, rental management."
+      }
+    }
+  },
+  "calculator": {
+    "eyebrow": "Plan your purchase",
+    "title": "Estimate your payment plan",
+    "lead": "Simulate the down payment, installments during construction and the balance on delivery.",
+    "cta": "See the project's plans"
+  },
+  "location": {
+    "eyebrow": "Location",
+    "title": "Macao & Punta Cana",
+    "lead": "The Caribbean's most visited destination, with its own international airport and steady tourism demand.",
+    "points": {
+      "airport": "Punta Cana International Airport",
+      "macao": "Macao Beach",
+      "bavaro": "Bávaro",
+      "capcana": "Cap Cana"
+    },
+    "advantages": {
+      "airport": {
+        "title": "Air connectivity",
+        "text": "Direct flights to North America, Europe and Latin America."
+      },
+      "beach": {
+        "title": "World-class beaches",
+        "text": "Over 50 km of coastline across Macao, Bávaro and Cap Cana."
+      },
+      "tourism": {
+        "title": "Tourism demand",
+        "text": "The country's leading area for tourist arrivals, ideal for vacation rentals."
+      },
+      "lifestyle": {
+        "title": "Lifestyle",
+        "text": "Golf, marinas, international schools and growing services."
+      }
+    }
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Guides & ideas for investing",
+    "all": "View all articles"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Your questions, answered"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your next property",
+    "lead": "Leave your details and an advisor will send you options, prices and availability within 24 hours.",
+    "orWhatsapp": "Prefer WhatsApp?",
+    "whatsapp": "Message us now"
+  }
+}

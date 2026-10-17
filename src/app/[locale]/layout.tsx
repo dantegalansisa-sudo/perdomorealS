@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -48,10 +49,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
 
   return (
     <html lang={locale} className={`${anton.variable} ${manrope.variable}`}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: consentDefaults }} />
-      </head>
       <body className="min-h-dvh">
+        <Script id="consent-default" strategy="beforeInteractive">{consentDefaults}</Script>
         <NextIntlClientProvider>
           <SiteProvider
             settings={{
