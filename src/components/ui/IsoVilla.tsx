@@ -23,6 +23,9 @@ const TONES = {
   hedge: { top: "#9fb38a", right: "#6f8a5c", left: "#839e6e" },
 };
 
+// On a navy background the "dark" volumes switch to slate so they stay readable.
+const DARK_ON_DARK = { top: "#5a6b85", right: "#2c3a52", left: "#3b4b66" };
+
 const boxes: Box[] = [
   { x: 0, y: 0, z: 0, w: 22, d: 17, h: 0.9, tone: "ground" },
   { x: 2.4, y: 2.2, z: 0.9, w: 11, d: 7.2, h: 3.3, tone: "wall" },
@@ -85,8 +88,9 @@ const lights = [
   [21.6, 7],
 ] as const;
 
-export function IsoVilla({ className, title = "Villa" }: { className?: string; title?: string }) {
+export function IsoVilla({ className, title = "Villa", onDark = false }: { className?: string; title?: string; onDark?: boolean }) {
   const order = boxes.map((b, i) => ({ b, i })).sort((a, z) => a.b.x + a.b.y + a.b.z * 1.4 - (z.b.x + z.b.y + z.b.z * 1.4));
+  const sfx = onDark ? "-d" : "";
   // Pool sits on the ground slab, in front of the villa
   const pool = [p(4, 10.6, 0.92), p(11.6, 10.6, 0.92), p(11.6, 14, 0.92), p(4, 14, 0.92)];
   const poolInner = [p(4.4, 11, 0.92), p(11.2, 11, 0.92), p(11.2, 13.6, 0.92), p(4.4, 13.6, 0.92)];
@@ -95,23 +99,23 @@ export function IsoVilla({ className, title = "Villa" }: { className?: string; t
   return (
     <svg viewBox="0 0 640 480" className={className} role="img" aria-label={title}>
       <defs>
-        <linearGradient id="iso-pool" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={`iso-pool${sfx}`} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#bfe1e6" />
           <stop offset="1" stopColor="#6fb3c2" />
         </linearGradient>
-        <radialGradient id="iso-shadow" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0" stopColor="#0b1f3a" stopOpacity="0.22" />
-          <stop offset="1" stopColor="#0b1f3a" stopOpacity="0" />
+        <radialGradient id={`iso-shadow${sfx}`} cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stopColor={onDark ? "#000000" : "#0b1f3a"} stopOpacity={onDark ? 0.45 : 0.22} />
+          <stop offset="1" stopColor={onDark ? "#000000" : "#0b1f3a"} stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="iso-glow" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id={`iso-glow${sfx}`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#f6e2b0" />
           <stop offset="1" stopColor="#d9a64e" />
         </linearGradient>
       </defs>
-      <ellipse cx="330" cy="400" rx="300" ry="62" fill="url(#iso-shadow)" />
+      <ellipse cx="330" cy="400" rx="300" ry="62" fill={`url(#iso-shadow${sfx})`} />
       {order.map(({ b, i }) => {
         const f = faces(b);
-        const tone = TONES[b.tone];
+        const tone = onDark && b.tone === "dark" ? DARK_ON_DARK : TONES[b.tone];
         return (
           <g key={i}>
             <polygon points={pts(f.left)} fill={tone.left} />
@@ -121,13 +125,13 @@ export function IsoVilla({ className, title = "Villa" }: { className?: string; t
               <>
                 <polygon points={pts(deck)} fill="#c8a77a" />
                 <polygon points={pts(pool)} fill="#f5f1ea" />
-                <polygon points={pts(poolInner)} fill="url(#iso-pool)" />
+                <polygon points={pts(poolInner)} fill={`url(#iso-pool${sfx})`} />
               </>
             )}
             {windows
               .filter((w) => w.box === i)
               .map((w, k) => (
-                <polygon key={k} points={pts(windowPoly(w))} fill={w.lit ? "url(#iso-glow)" : "#3d5378"} opacity={w.lit ? 0.95 : 0.9} stroke="#0b1f3a" strokeOpacity="0.25" strokeWidth="1" />
+                <polygon key={k} points={pts(windowPoly(w))} fill={w.lit ? `url(#iso-glow${sfx})` : "#3d5378"} opacity={w.lit ? 0.95 : 0.9} stroke="#0b1f3a" strokeOpacity="0.25" strokeWidth="1" />
               ))}
           </g>
         );

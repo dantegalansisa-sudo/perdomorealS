@@ -14,11 +14,35 @@
     "favorites": "Favoritos",
     "compare": "Comparar"
   },
-  "categories": { "villas": "Villas", "apartments": "Apartamentos", "houses": "Casas", "land": "Terrenos", "projects": "Proyectos" },
-  "types": { "villa": "Villa", "apartment": "Apartamento", "house": "Casa", "land": "Terreno" },
-  "status": { "preventa": "Preventa", "construccion": "En construcción", "listo": "Listo para entrega" },
-  "unitStatus": { "available": "Disponible", "reserved": "Reservada", "sold": "Vendida" },
-  "badges": { "new": "Nuevo", "presale": "Preventa", "last_units": "Últimas unidades", "sold": "Vendida" },
+  "categories": {
+    "villas": "Villas y casas",
+    "apartments": "Apartamentos",
+    "houses": "Casas",
+    "land": "Terrenos",
+    "projects": "Proyectos"
+  },
+  "types": {
+    "villa": "Villa",
+    "apartment": "Apartamento",
+    "house": "Casa",
+    "land": "Terreno"
+  },
+  "status": {
+    "preventa": "Preventa",
+    "construccion": "En construcción",
+    "listo": "Listo para entrega"
+  },
+  "unitStatus": {
+    "available": "Disponible",
+    "reserved": "Reservada",
+    "sold": "Vendida"
+  },
+  "badges": {
+    "new": "Nuevo",
+    "presale": "Preventa",
+    "last_units": "Últimas unidades",
+    "sold": "Vendida"
+  },
   "amenities": {
     "pool": "Piscina",
     "sea_view": "Vista al mar",
@@ -115,5 +139,6 @@
     "text": "La página que buscas no existe o fue movida. Te ayudamos a encontrar tu próxima propiedad.",
     "home": "Volver al inicio",
     "properties": "Ver propiedades"
-  }
+  },
+  "slogan": "Tu propiedad. Tu futuro. Punta Cana."
 }

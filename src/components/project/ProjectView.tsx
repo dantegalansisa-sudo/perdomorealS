@@ -71,25 +71,29 @@ export async function ProjectView({ project, models, units, faqs, properties = [
   return (
     <>
       {/* 1. Hero */}
-      <section id="project-hero" className="bg-sand pt-28 pb-12 sm:pt-32 sm:pb-16">
-        <div className="container-x">
-          <Breadcrumbs items={breadcrumbs} className="mb-6" />
+      <section id="project-hero" className="px-2 pt-[76px] sm:px-3 lg:pt-[84px]">
+        <div className="container-x pt-3 pb-4">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
+        <div className="relative isolate overflow-hidden rounded-[2rem] bg-[radial-gradient(120%_90%_at_78%_0%,#1d3d68_0%,#0b1f3a_52%,#06142a_100%)] text-white lg:rounded-[2.75rem]">
+        <div aria-hidden className="pointer-events-none absolute -top-48 right-[-8%] -z-10 size-[40rem] rounded-full bg-gold/15 blur-3xl" />
+        <div className="container-x py-10 sm:py-14 lg:py-16">
           <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
             <div className="min-w-0">
               <Reveal y={12}>
                 <div className="mb-5 flex flex-wrap items-center gap-3">
-                  <p className="eyebrow inline-flex items-center gap-3">
+                  <p className="eyebrow inline-flex items-center gap-3 text-gold">
                     <span className="h-px w-8 bg-gold" aria-hidden />
                     {eyebrow}
                   </p>
                   <PlaceholderBadge show={project.is_placeholder} />
                 </div>
               </Reveal>
-              <RevealText as="h1" immediate className="text-[2.6rem] text-navy sm:text-6xl xl:text-[5.4rem]">
+              <RevealText as="h1" immediate className="text-[2.6rem] text-white sm:text-6xl xl:text-[5.4rem]">
                 {h1}
               </RevealText>
               <Reveal delay={0.2}>
-                <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-soft sm:text-xl">{tr(project.tagline, locale)}</p>
+                <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">{tr(project.tagline, locale)}</p>
               </Reveal>
               <Reveal delay={0.3} className="mt-8">
                 <KeyFacts project={project} unitsCount={unitsCount} available={available} unitLabel={villas ? t("hero.units") : t("hero.unitsGeneric")} locale={locale} />
@@ -98,7 +102,7 @@ export async function ProjectView({ project, models, units, faqs, properties = [
                 <ProjectCtas projectId={project.id} interest={interest} />
               </Reveal>
               <Reveal delay={0.5} className="mt-6">
-                <ShareButtons title={`${project.name} — ${tr(project.tagline, locale)}`} url={pageUrl} />
+                <ShareButtons className="[&>span:first-child]:text-white/60" title={`${project.name} — ${tr(project.tagline, locale)}`} url={pageUrl} />
               </Reveal>
             </div>
             <Reveal delay={0.15} className="min-w-0">
@@ -106,8 +110,9 @@ export async function ProjectView({ project, models, units, faqs, properties = [
             </Reveal>
           </div>
           <Reveal className="mt-10 max-w-3xl">
-            <p className="leading-relaxed text-stone sm:text-lg">{tr(project.description, locale)}</p>
+            <p className="leading-relaxed text-white/65 sm:text-lg">{tr(project.description, locale)}</p>
           </Reveal>
+        </div>
         </div>
       </section>
 

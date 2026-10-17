@@ -25,27 +25,27 @@ function useSearchNav() {
   };
 }
 
-function SelectField({ icon, label, value, onChange, children, id }: { icon: React.ReactNode; label: string; value: string; onChange: (v: string) => void; children: React.ReactNode; id: string }) {
+function SelectField({ icon, label, value, onChange, children, id, dark }: { icon: React.ReactNode; label: string; value: string; onChange: (v: string) => void; children: React.ReactNode; id: string; dark?: boolean }) {
   return (
-    <label htmlFor={id} className="group relative flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-full px-4 py-2 transition-colors hover:bg-sand">
-      <span className="text-gold-dark">{icon}</span>
+    <label htmlFor={id} className={cn("group relative flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-full px-4 py-2 transition-colors", dark ? "hover:bg-white/[0.08]" : "hover:bg-sand")}>
+      <span className={dark ? "text-gold" : "text-gold-dark"}>{icon}</span>
       <span className="flex min-w-0 flex-col">
-        <span className="text-[10px] font-bold tracking-[0.16em] text-stone uppercase">{label}</span>
-        <select id={id} value={value} onChange={(e) => onChange(e.target.value)} className="w-full cursor-pointer appearance-none truncate bg-transparent pr-5 text-sm font-semibold text-navy outline-none">
+        <span className={cn("text-[10px] font-bold tracking-[0.16em] uppercase", dark ? "text-white/55" : "text-stone")}>{label}</span>
+        <select id={id} value={value} onChange={(e) => onChange(e.target.value)} className={cn("w-full cursor-pointer appearance-none truncate bg-transparent pr-5 text-sm font-semibold outline-none [&>option]:text-navy", dark ? "text-white" : "text-navy")}>
           {children}
         </select>
       </span>
-      <ChevronDown className="pointer-events-none absolute right-3 size-3.5 text-stone" aria-hidden />
+      <ChevronDown className={cn("pointer-events-none absolute right-3 size-3.5", dark ? "text-white/50" : "text-stone")} aria-hidden />
     </label>
   );
 }
 
-function Fields({ s, set, idPrefix, zones }: { s: State; set: (p: Partial<State>) => void; idPrefix: string; zones: string[] }) {
+function Fields({ s, set, idPrefix, zones, dark }: { s: State; set: (p: Partial<State>) => void; idPrefix: string; zones: string[]; dark?: boolean }) {
   const t = useTranslations("home.hero");
   const tc = useTranslations("common");
   return (
     <>
-      <SelectField id={`${idPrefix}-zone`} icon={<MapPin className="size-4" />} label={t("location")} value={s.zone} onChange={(zone) => set({ zone })}>
+      <SelectField dark={dark} id={`${idPrefix}-zone`} icon={<MapPin className="size-4" />} label={t("location")} value={s.zone} onChange={(zone) => set({ zone })}>
         <option value="">{t("anyLocation")}</option>
         {zones.map((z) => (
           <option key={z} value={z}>
@@ -53,7 +53,7 @@ function Fields({ s, set, idPrefix, zones }: { s: State; set: (p: Partial<State>
           </option>
         ))}
       </SelectField>
-      <SelectField id={`${idPrefix}-type`} icon={<Home className="size-4" />} label={t("type")} value={s.type} onChange={(type) => set({ type })}>
+      <SelectField dark={dark} id={`${idPrefix}-type`} icon={<Home className="size-4" />} label={t("type")} value={s.type} onChange={(type) => set({ type })}>
         <option value="">{t("anyType")}</option>
         {TYPES.map((ty) => (
           <option key={ty} value={ty}>
@@ -61,7 +61,7 @@ function Fields({ s, set, idPrefix, zones }: { s: State; set: (p: Partial<State>
           </option>
         ))}
       </SelectField>
-      <SelectField id={`${idPrefix}-budget`} icon={<Wallet className="size-4" />} label={t("budget")} value={s.budget} onChange={(budget) => set({ budget })}>
+      <SelectField dark={dark} id={`${idPrefix}-budget`} icon={<Wallet className="size-4" />} label={t("budget")} value={s.budget} onChange={(budget) => set({ budget })}>
         <option value="">{t("anyBudget")}</option>
         {BUDGETS.map((b) => (
           <option key={b} value={b}>
@@ -73,7 +73,7 @@ function Fields({ s, set, idPrefix, zones }: { s: State; set: (p: Partial<State>
   );
 }
 
-export function QuickChips({ className }: { className?: string }) {
+export function QuickChips({ className, dark }: { className?: string; dark?: boolean }) {
   const t = useTranslations("home.hero");
   const chips = [
     { key: "villasMacao", query: { type: "villa", zone: "Macao" } },
@@ -83,9 +83,9 @@ export function QuickChips({ className }: { className?: string }) {
   ] as const;
   return (
     <div className={cn("flex flex-wrap items-center gap-2", className)}>
-      <span className="text-xs font-semibold text-stone">{t("quick")}</span>
+      <span className={cn("text-xs font-semibold", dark ? "text-white/55" : "text-stone")}>{t("quick")}</span>
       {chips.map((c) => (
-        <Link key={c.key} href={{ pathname: "/properties", query: c.query }} className="chip">
+        <Link key={c.key} href={{ pathname: "/properties", query: c.query }} className={dark ? "chip border-white/15 bg-white/[0.06] text-white/85 hover:border-gold hover:bg-white/10 hover:text-white" : "chip"}>
           {t(`chips.${c.key}`)}
         </Link>
       ))}
@@ -105,9 +105,9 @@ export function HeroSearchDesktop({ zones }: { zones: string[] }) {
         e.preventDefault();
         go(s);
       }}
-      className="flex items-center gap-1 rounded-full border border-white bg-white/90 p-1.5 shadow-[0_20px_50px_-24px_rgba(11,31,58,0.45)] backdrop-blur-xl"
+      className="flex items-center gap-1 rounded-full border border-white/15 bg-white/[0.07] p-1.5 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)] backdrop-blur-xl"
     >
-      <Fields s={s} set={(p) => setS((x) => ({ ...x, ...p }))} idPrefix="hero-d" zones={zones} />
+      <Fields s={s} set={(p) => setS((x) => ({ ...x, ...p }))} idPrefix="hero-d" zones={zones} dark />
       <button type="submit" className="btn btn-gold shrink-0 px-5 py-3.5">
         <Search className="size-4" aria-hidden />
         {t("search")}
@@ -137,10 +137,10 @@ export function HeroSearchMobile({ zones }: { zones: string[] }) {
         type="button"
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
-        className="flex w-full items-center gap-3 rounded-full border border-white bg-white/95 p-1.5 pl-5 text-left shadow-[0_16px_40px_-20px_rgba(11,31,58,0.5)]"
+        className="flex w-full items-center gap-3 rounded-full border border-white/15 bg-white/[0.08] p-1.5 pl-5 text-left backdrop-blur"
       >
-        <Search className="size-4 text-gold-dark" aria-hidden />
-        <span className="flex-1 text-sm font-semibold text-navy-soft">{t("searchMobile")}</span>
+        <Search className="size-4 text-gold" aria-hidden />
+        <span className="flex-1 text-sm font-semibold text-white/80">{t("searchMobile")}</span>
         <span className="grid size-11 place-items-center rounded-full bg-gold text-navy">
           <SlidersHorizontal className="size-4" aria-hidden />
         </span>

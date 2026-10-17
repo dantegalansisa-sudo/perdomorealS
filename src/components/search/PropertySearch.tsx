@@ -33,7 +33,8 @@ export function PropertySearch({ properties, projects, lockedType }: Props) {
 
   const filters = useMemo(() => {
     const f = parseFilters(new URLSearchParams(sp.toString()));
-    if (lockedType) f.type = [lockedType];
+    // The villas landing also targets houses (client brief: "villas y casas").
+    if (lockedType) f.type = lockedType === "villa" ? ["villa", "house"] : [lockedType];
     return f;
   }, [sp, lockedType]);
 

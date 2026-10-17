@@ -190,5 +190,11 @@
     "lead": "Déjanos tus datos y un asesor te enviará opciones, precios y disponibilidad en menos de 24 horas.",
     "orWhatsapp": "¿Prefieres WhatsApp?",
     "whatsapp": "Escríbenos ahora"
+  },
+  "projects": {
+    "eyebrow": "Otros proyectos",
+    "title": "Más proyectos en Punta Cana",
+    "lead": "Apartamentos y residencias seleccionados en Cap Cana y Bávaro, con planes de pago y entrega definida.",
+    "all": "Ver todos los proyectos"
   }
 }

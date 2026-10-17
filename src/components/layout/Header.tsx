@@ -65,7 +65,7 @@ export function Header() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-[60] transition-[background-color,box-shadow,padding] duration-500",
-          scrolled ? "bg-sand/85 py-2 shadow-[0_10px_30px_-20px_rgba(11,31,58,0.35)] backdrop-blur-xl" : "py-3 lg:py-4"
+          scrolled ? "bg-white/85 py-2 shadow-[0_10px_30px_-20px_rgba(11,31,58,0.35)] backdrop-blur-xl" : "py-3 lg:py-4"
         )}
       >
         <div className="container-x flex items-center justify-between gap-4">

@@ -38,6 +38,7 @@ Copia `.env.example` a `.env.local` y completa:
 | `LEADS_NOTIFY_FROM` | Remitente verificado en Resend, ej. `Perdomo Real Estate <leads@tudominio.com>` |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | Opcional: Cloudflare Turnstile anti-spam |
 | `IP_HASH_SALT` | Sal para el hash de IP del rate limit (cualquier texto aleatorio) |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Opcional: token de verificación de Google Search Console (método etiqueta HTML). También puede verificarse por DNS |
 
 GTM / GA4 **no** van en variables: se configuran en **Admin → Ajustes** y solo se cargan si el visitante acepta cookies.
 
@@ -157,6 +158,7 @@ Mapa de redirecciones en `next.config.ts → redirects()`. Agrega ahí las URLs 
 - [ ] Supabase de producción (migración + primer usuario admin)
 - [ ] Resend: verificar dominio remitente y configurar `LEADS_NOTIFY_*`
 - [ ] GTM / GA4: crear contenedor, poner IDs en Admin → Ajustes, configurar activadores
-- [ ] Google Search Console: verificar dominio y enviar `sitemap.xml`
+- [ ] Google Search Console: verificar dominio (DNS o `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`), enviar `sitemap.xml` y dar acceso propietario al cliente
+- [ ] Copias de seguridad: activar backups diarios / PITR en Supabase (plan Pro) y exportar la base periódicamente
 - [ ] (Opcional) Cloudflare Turnstile
 - [ ] Lighthouse móvil con imágenes reales (objetivo ≥ 90 en Performance y SEO)

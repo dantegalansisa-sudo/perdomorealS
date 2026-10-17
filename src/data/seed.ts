@@ -57,7 +57,7 @@ export const seedSettings: SiteSettings = {
   address: "Punta Cana, La Altagracia, República Dominicana",
   socials: { instagram: "https://instagram.com/", facebook: "https://facebook.com/", youtube: "https://youtube.com/" },
   hero: {
-    title: t("LUXURY REAL ESTATE IN PUNTA CANA", "LUXURY REAL ESTATE IN PUNTA CANA"),
+    title: t("Luxury Real Estate in Punta Cana, Dominican Republic", "Luxury Real Estate in Punta Cana, Dominican Republic"),
     subtitle: t(
       "Villas, apartamentos y terrenos seleccionados en Macao, Bávaro y Cap Cana. Asesoría bilingüe de principio a fin.",
       "Hand-picked villas, apartments and land in Macao, Bávaro and Cap Cana. Bilingual guidance from first call to closing."
@@ -609,139 +609,206 @@ export const seedProperties: Property[] = baseProps.map((p, i) => ({
 
 const article = (paragraphs: string[]) => paragraphs.map((p) => (p.startsWith("<") ? p : `<p>${p}</p>`)).join("\n");
 
+// Blog topics follow the client's brief. Content is original sample copy, to be reviewed before publishing.
+const post = (n: number, category: string, date: string, slugs: [string, string], title: [string, string], excerpt: [string, string], es: string[], en: string[]): Post => ({
+  id: uid(5, n),
+  slug_es: slugs[0],
+  slug_en: slugs[1],
+  title: t(...title),
+  excerpt: t(...excerpt),
+  content: t(article(es), article(en)),
+  category,
+  cover_url: null,
+  author: "Perdomo Real Estate",
+  published: true,
+  published_at: date,
+  seo: {},
+  is_placeholder: true,
+});
+
 export const seedPosts: Post[] = [
-  {
-    id: uid(5, 1),
-    slug_es: "como-comprar-propiedad-en-republica-dominicana-siendo-extranjero",
-    slug_en: "how-to-buy-property-in-the-dominican-republic-as-a-foreigner",
-    title: t("Cómo comprar una propiedad en República Dominicana siendo extranjero", "How to buy property in the Dominican Republic as a foreigner"),
-    excerpt: t(
-      "Guía paso a paso: documentos, debida diligencia, contrato de promesa y cierre. Artículo de ejemplo.",
-      "A step-by-step guide: documents, due diligence, purchase agreement and closing. Sample article."
-    ),
-    content: t(
-      article([
-        "Este es un artículo de ejemplo. El contenido real será redactado y revisado por el equipo de Perdomo Real Estate junto a un abogado local.",
-        "<h2>1. Define tu objetivo</h2>",
-        "Antes de visitar propiedades, define si buscas una segunda residencia, una inversión para alquiler o un lugar para vivir.",
-        "<h2>2. Debida diligencia</h2>",
-        "Un abogado independiente verifica el título, los impuestos al día y los permisos del proyecto.",
-        "<h2>3. Contrato y pagos</h2>",
-        "En proyectos en planos se firma un contrato de promesa de compraventa con un calendario de pagos ligado al avance de obra.",
-        "<h2>4. Cierre y título</h2>",
-        "Al entregar la propiedad se firma el contrato definitivo y se transfiere el título a tu nombre.",
-      ]),
-      article([
-        "This is a sample article. The real content will be written and reviewed by the Perdomo Real Estate team together with a local attorney.",
-        "<h2>1. Define your goal</h2>",
-        "Before touring properties, decide whether you want a second home, a rental investment or a place to live.",
-        "<h2>2. Due diligence</h2>",
-        "An independent attorney verifies the title, that taxes are paid and the project's permits.",
-        "<h2>3. Agreement and payments</h2>",
-        "For off-plan projects you sign a promise-to-sell agreement with a payment schedule tied to construction progress.",
-        "<h2>4. Closing and title</h2>",
-        "On delivery you sign the final deed and the title is transferred to your name.",
-      ])
-    ),
-    category: "guias",
-    cover_url: null,
-    author: "Perdomo Real Estate",
-    published: true,
-    published_at: "2026-10-01T10:00:00Z",
-    seo: {},
-    is_placeholder: true,
-  },
-  {
-    id: uid(5, 2),
-    slug_es: "playa-macao-guia-completa",
-    slug_en: "macao-beach-complete-guide",
-    title: t("Playa Macao: la guía completa de la zona con más proyección de Punta Cana", "Macao Beach: a complete guide to Punta Cana's up-and-coming area"),
-    excerpt: t("Qué hace especial a Macao, cómo llegar y por qué atrae a compradores e inversionistas. Artículo de ejemplo.", "What makes Macao special, how to get there and why it attracts buyers and investors. Sample article."),
-    content: t(
-      article(["Artículo de ejemplo sobre Playa Macao.", "<h2>Una playa protegida</h2>", "Macao es conocida por su arena dorada y su entorno natural poco desarrollado.", "<h2>Conectividad</h2>", "La zona se conecta con Bávaro y el aeropuerto por la autovía del Coral."]),
-      article(["Sample article about Macao Beach.", "<h2>A protected beach</h2>", "Macao is known for its golden sand and low-density natural surroundings.", "<h2>Connectivity</h2>", "The area connects to Bávaro and the airport via the Coral highway."])
-    ),
-    category: "zonas",
-    cover_url: null,
-    author: "Perdomo Real Estate",
-    published: true,
-    published_at: "2026-09-20T10:00:00Z",
-    seo: {},
-    is_placeholder: true,
-  },
-  {
-    id: uid(5, 3),
-    slug_es: "planes-de-pago-en-planos-explicados",
-    slug_en: "off-plan-payment-plans-explained",
-    title: t("Planes de pago en planos: cómo funcionan el inicial, las cuotas y el saldo contra entrega", "Off-plan payment plans: how down payment, installments and balance on delivery work"),
-    excerpt: t("Entiende cada etapa del pago al comprar en preventa. Artículo de ejemplo.", "Understand each payment stage when buying pre-construction. Sample article."),
-    content: t(
-      article(["Artículo de ejemplo.", "<h2>El inicial</h2>", "Normalmente entre 10% y 30% al firmar.", "<h2>Cuotas durante la construcción</h2>", "Pagos mensuales o por hitos de obra.", "<h2>Saldo contra entrega</h2>", "Se paga al recibir la propiedad, con fondos propios o financiamiento."]),
-      article(["Sample article.", "<h2>The down payment</h2>", "Typically between 10% and 30% at signing.", "<h2>Installments during construction</h2>", "Monthly payments or construction milestones.", "<h2>Balance on delivery</h2>", "Paid when you receive the property, with your own funds or financing."])
-    ),
-    category: "inversion",
-    cover_url: null,
-    author: "Perdomo Real Estate",
-    published: true,
-    published_at: "2026-09-10T10:00:00Z",
-    seo: {},
-    is_placeholder: true,
-  },
-  {
-    id: uid(5, 4),
-    slug_es: "rentabilidad-alquiler-vacacional-punta-cana",
-    slug_en: "vacation-rental-returns-punta-cana",
-    title: t("¿Cuánto puede rentar una villa en Punta Cana? Variables que debes conocer", "How much can a villa earn in Punta Cana? Variables you should know"),
-    excerpt: t("Ocupación, tarifa diaria, gastos de gestión y mantenimiento. Artículo de ejemplo.", "Occupancy, nightly rate, management and maintenance costs. Sample article."),
-    content: t(
-      article(["Artículo de ejemplo. Las cifras de rentabilidad siempre son estimaciones.", "<h2>Ocupación</h2>", "Depende de la temporada, la ubicación y la gestión.", "<h2>Gastos</h2>", "Considera administración, limpieza, mantenimiento, servicios e impuestos."]),
-      article(["Sample article. Return figures are always estimates.", "<h2>Occupancy</h2>", "Depends on season, location and management.", "<h2>Costs</h2>", "Account for management, cleaning, maintenance, utilities and taxes."])
-    ),
-    category: "inversion",
-    cover_url: null,
-    author: "Perdomo Real Estate",
-    published: true,
-    published_at: "2026-08-28T10:00:00Z",
-    seo: {},
-    is_placeholder: true,
-  },
-  {
-    id: uid(5, 5),
-    slug_es: "ley-confotur-beneficios-fiscales",
-    slug_en: "confotur-law-tax-benefits",
-    title: t("Ley CONFOTUR: qué es y cómo puede beneficiar tu compra", "CONFOTUR law: what it is and how it can benefit your purchase"),
-    excerpt: t("Resumen general de los incentivos turísticos. Verifica siempre con un abogado. Artículo de ejemplo.", "An overview of tourism incentives. Always verify with an attorney. Sample article."),
-    content: t(
-      article(["Artículo de ejemplo. No constituye asesoría legal ni fiscal.", "<h2>¿Qué es?</h2>", "Un régimen de incentivos para proyectos turísticos aprobados.", "<h2>Verificación</h2>", "Confirma con un abogado si el proyecto específico está aprobado."]),
-      article(["Sample article. This is not legal or tax advice.", "<h2>What is it?</h2>", "An incentive framework for approved tourism projects.", "<h2>Verification</h2>", "Confirm with an attorney whether the specific project is approved."])
-    ),
-    category: "legal",
-    cover_url: null,
-    author: "Perdomo Real Estate",
-    published: true,
-    published_at: "2026-08-15T10:00:00Z",
-    seo: {},
-    is_placeholder: true,
-  },
-  {
-    id: uid(5, 6),
-    slug_es: "costos-de-cierre-al-comprar-en-punta-cana",
-    slug_en: "closing-costs-when-buying-in-punta-cana",
-    title: t("Costos de cierre al comprar en Punta Cana: lo que nadie te cuenta", "Closing costs when buying in Punta Cana: what nobody tells you"),
-    excerpt: t("Impuesto de transferencia, honorarios legales y otros gastos. Artículo de ejemplo.", "Transfer tax, legal fees and other expenses. Sample article."),
-    content: t(
-      article(["Artículo de ejemplo.", "<h2>Impuestos</h2>", "El impuesto de transferencia aplica sobre el valor de la propiedad salvo exenciones.", "<h2>Honorarios</h2>", "Incluye abogado, notario y registro."]),
-      article(["Sample article.", "<h2>Taxes</h2>", "Transfer tax applies to the property value unless exempt.", "<h2>Fees</h2>", "Includes attorney, notary and registry."])
-    ),
-    category: "guias",
-    cover_url: null,
-    author: "Perdomo Real Estate",
-    published: true,
-    published_at: "2026-08-01T10:00:00Z",
-    seo: {},
-    is_placeholder: true,
-  },
+  post(
+    1,
+    "guias",
+    "2026-10-01T10:00:00Z",
+    ["comprar-propiedad-en-punta-cana-guia-practica", "buying-property-in-punta-cana-practical-guide"],
+    ["Comprar una propiedad en Punta Cana: guía práctica", "Buying Property in Punta Cana: A Practical Guide"],
+    [
+      "Del primer presupuesto a la entrega de llaves: los pasos reales para comprar con seguridad en Punta Cana. Artículo de ejemplo.",
+      "From your first budget to getting the keys: the real steps to buy safely in Punta Cana. Sample article.",
+    ],
+    [
+      "Artículo de ejemplo. El contenido definitivo será revisado por el equipo de Perdomo Real Estate y un abogado local.",
+      "<h2>1. Define para qué compras</h2>",
+      "Vivir, pasar temporadas o rentar: cada objetivo cambia la zona ideal, el tipo de propiedad y el presupuesto. Una villa para alquiler vacacional se evalúa distinto a una casa para vivir todo el año.",
+      "<h2>2. Fija un presupuesto completo</h2>",
+      "Además del precio, considera impuestos de transferencia (si aplican), honorarios legales, mobiliario, cuota de mantenimiento e impuesto anual a la propiedad.",
+      "<h2>3. Elige zona y proyecto</h2>",
+      "Macao, Bávaro y Cap Cana tienen perfiles muy distintos en precio, ambiente y potencial de renta. Visita, presencial o virtualmente, antes de decidir.",
+      "<h2>4. Revisión legal independiente</h2>",
+      "Un abogado de tu confianza debe verificar el título, los permisos del proyecto y el contrato antes de firmar o pagar.",
+      "<h2>5. Reserva, contrato y pagos</h2>",
+      "En proyectos en construcción se firma un contrato de promesa con un calendario de pagos. En propiedades listas, el cierre suele ser más rápido.",
+      "<h2>6. Entrega y título</h2>",
+      "Al recibir la propiedad se firma el contrato definitivo y se inscribe el título a tu nombre.",
+    ],
+    [
+      "Sample article. The final content will be reviewed by the Perdomo Real Estate team and a local attorney.",
+      "<h2>1. Decide why you are buying</h2>",
+      "Living, seasonal stays or renting out: each goal changes the right area, property type and budget. A vacation-rental villa is evaluated differently from a year-round home.",
+      "<h2>2. Set a complete budget</h2>",
+      "Beyond the price, account for transfer tax (if applicable), legal fees, furniture, HOA fees and the annual property tax.",
+      "<h2>3. Choose the area and project</h2>",
+      "Macao, Bávaro and Cap Cana differ widely in price, atmosphere and rental potential. Visit — in person or virtually — before deciding.",
+      "<h2>4. Independent legal review</h2>",
+      "An attorney you trust should verify the title, the project's permits and the contract before you sign or pay.",
+      "<h2>5. Reservation, contract and payments</h2>",
+      "Off-plan projects use a promise-to-sell agreement with a payment schedule. Ready properties usually close faster.",
+      "<h2>6. Delivery and title</h2>",
+      "On delivery you sign the final deed and the title is registered in your name.",
+    ]
+  ),
+  post(
+    2,
+    "zonas",
+    "2026-09-24T10:00:00Z",
+    ["villas-en-venta-en-macao-punta-cana", "villas-for-sale-in-macao-punta-cana"],
+    ["Villas en venta en Macao, Punta Cana: lo que debes saber", "Villas for Sale in Macao, Punta Cana"],
+    [
+      "Por qué Macao atrae a compradores de villas, qué tipos de proyectos hay y qué revisar antes de reservar. Artículo de ejemplo.",
+      "Why Macao attracts villa buyers, what kinds of projects exist and what to check before reserving. Sample article.",
+    ],
+    [
+      "Artículo de ejemplo.",
+      "<h2>Una zona con carácter propio</h2>",
+      "Macao combina una de las playas más naturales de Punta Cana con un desarrollo de baja densidad, a pocos minutos de Bávaro y del aeropuerto.",
+      "<h2>Qué tipo de villas encontrarás</h2>",
+      "Predominan las comunidades cerradas de villas de 2 a 4 habitaciones con piscina privada, muchas en etapa de preventa con planes de pago durante la construcción.",
+      "<h2>Qué revisar antes de reservar</h2>",
+      "<ul><li>Permisos y licencias del proyecto.</li><li>Calendario de obra y fecha de entrega.</li><li>Reglamento sobre alquiler vacacional.</li><li>Cuota de mantenimiento estimada.</li></ul>",
+    ],
+    [
+      "Sample article.",
+      "<h2>An area with its own character</h2>",
+      "Macao pairs one of Punta Cana's most natural beaches with low-density development, minutes from Bávaro and the airport.",
+      "<h2>What kind of villas you'll find</h2>",
+      "Gated communities of 2- to 4-bedroom villas with private pools dominate, many in pre-sale with payment plans during construction.",
+      "<h2>What to check before reserving</h2>",
+      "<ul><li>Project permits and licences.</li><li>Construction schedule and delivery date.</li><li>Vacation-rental rules.</li><li>Estimated HOA fees.</li></ul>",
+    ]
+  ),
+  post(
+    3,
+    "legal",
+    "2026-09-15T10:00:00Z",
+    ["que-revisar-antes-de-comprar-una-propiedad-en-republica-dominicana", "what-to-consider-before-buying-property-in-the-dominican-republic"],
+    ["Qué revisar antes de comprar una propiedad en República Dominicana", "What to Consider Before Buying Property in the Dominican Republic"],
+    [
+      "Título, permisos, costos y contrato: la lista que conviene repasar con tu abogado. Artículo de ejemplo.",
+      "Title, permits, costs and contract: the checklist to review with your attorney. Sample article.",
+    ],
+    [
+      "Artículo de ejemplo. No constituye asesoría legal.",
+      "<h2>El título de propiedad</h2>",
+      "Confirma que el vendedor o desarrollador es el titular, que el terreno está deslindado y que no tiene cargas ni gravámenes.",
+      "<h2>Permisos del proyecto</h2>",
+      "Licencia de construcción, permisos ambientales y, si aplica, aprobaciones turísticas.",
+      "<h2>Costos totales</h2>",
+      "Impuesto de transferencia, honorarios, gastos de registro, mantenimiento e impuesto anual.",
+      "<h2>El contrato</h2>",
+      "Revisa penalidades por retraso, condiciones de devolución y qué incluye exactamente la entrega.",
+    ],
+    [
+      "Sample article. This is not legal advice.",
+      "<h2>The title</h2>",
+      "Confirm the seller or developer holds the title, that the land is surveyed and free of liens.",
+      "<h2>Project permits</h2>",
+      "Construction licence, environmental permits and, where relevant, tourism approvals.",
+      "<h2>Total costs</h2>",
+      "Transfer tax, fees, registry costs, HOA fees and the annual property tax.",
+      "<h2>The contract</h2>",
+      "Check delay penalties, refund conditions and exactly what the delivery includes.",
+    ]
+  ),
+  post(
+    4,
+    "guias",
+    "2026-09-05T10:00:00Z",
+    ["comprar-un-apartamento-en-punta-cana", "buying-an-apartment-in-punta-cana"],
+    ["Comprar un apartamento en Punta Cana", "Buying an Apartment in Punta Cana"],
+    [
+      "Ubicación, amenidades, cuota de mantenimiento y potencial de renta: cómo comparar apartamentos. Artículo de ejemplo.",
+      "Location, amenities, HOA fees and rental potential: how to compare apartments. Sample article.",
+    ],
+    [
+      "Artículo de ejemplo.",
+      "<h2>Ubicación primero</h2>",
+      "La distancia a la playa, a servicios y al aeropuerto influye tanto en tu día a día como en la demanda de alquiler.",
+      "<h2>Amenidades que sí importan</h2>",
+      "Piscina, seguridad, parqueo y, si piensas rentar, gestión profesional en el propio edificio.",
+      "<h2>Costos recurrentes</h2>",
+      "Pregunta por la cuota de mantenimiento y qué cubre. Una cuota baja puede significar menos servicios.",
+    ],
+    [
+      "Sample article.",
+      "<h2>Location first</h2>",
+      "Distance to the beach, services and the airport shapes both daily life and rental demand.",
+      "<h2>Amenities that matter</h2>",
+      "Pool, security, parking and, if you plan to rent, professional on-site management.",
+      "<h2>Recurring costs</h2>",
+      "Ask about HOA fees and what they cover. A low fee can mean fewer services.",
+    ]
+  ),
+  post(
+    5,
+    "inversion",
+    "2026-08-25T10:00:00Z",
+    ["preguntas-antes-de-comprar-una-villa-nueva", "questions-to-ask-before-purchasing-a-new-villa"],
+    ["Preguntas que debes hacer antes de comprar una villa nueva", "Questions to Ask Before Purchasing a New Villa"],
+    [
+      "Diez preguntas para el desarrollador antes de firmar una reserva. Artículo de ejemplo.",
+      "Ten questions for the developer before you sign a reservation. Sample article.",
+    ],
+    [
+      "Artículo de ejemplo.",
+      "<ol><li>¿Qué proyectos ha entregado el desarrollador?</li><li>¿Qué permisos tiene el proyecto hoy?</li><li>¿Cuál es la fecha de entrega y qué pasa si se retrasa?</li><li>¿Qué acabados incluye el precio?</li><li>¿Se permite el alquiler vacacional?</li><li>¿Cuál será la cuota de mantenimiento?</li><li>¿Cómo se ejecutan los pagos?</li><li>¿Qué garantías ofrece la construcción?</li><li>¿Puedo personalizar la villa?</li><li>¿Quién administra la comunidad?</li></ol>",
+    ],
+    [
+      "Sample article.",
+      "<ol><li>What projects has the developer delivered?</li><li>What permits does the project hold today?</li><li>What is the delivery date and what happens if it slips?</li><li>Which finishes are included in the price?</li><li>Is vacation rental allowed?</li><li>What will the HOA fee be?</li><li>How are payments handled?</li><li>What construction warranties apply?</li><li>Can I customise the villa?</li><li>Who manages the community?</li></ol>",
+    ]
+  ),
+  post(
+    6,
+    "guias",
+    "2026-08-12T10:00:00Z",
+    ["guia-para-comprar-una-villa-en-punta-cana", "how-to-buy-a-villa-in-punta-cana"],
+    ["Guía para comprar una villa en Punta Cana", "How to Buy a Villa in Punta Cana"],
+    [
+      "Modelos, terreno, piscina y plan de pago: cómo elegir la villa adecuada. Artículo de ejemplo.",
+      "Models, lot size, pool and payment plan: how to choose the right villa. Sample article.",
+    ],
+    [
+      "Artículo de ejemplo.",
+      "<h2>Elige el modelo por uso real</h2>",
+      "Piensa en cuántas personas usarán la villa y si la rentarás: a veces una habitación extra aumenta mucho el potencial de alquiler.",
+      "<h2>El lote importa</h2>",
+      "Orientación, privacidad y metros de terreno marcan la diferencia en el día a día y en el valor futuro.",
+      "<h2>Compara planes de pago</h2>",
+      "Un inicial más bajo da flexibilidad, pero revisa el saldo contra entrega y cómo lo financiarás.",
+    ],
+    [
+      "Sample article.",
+      "<h2>Pick the model for real use</h2>",
+      "Think about how many people will use the villa and whether you'll rent it: an extra bedroom can greatly increase rental potential.",
+      "<h2>The lot matters</h2>",
+      "Orientation, privacy and lot size make a difference day to day and in future value.",
+      "<h2>Compare payment plans</h2>",
+      "A lower down payment gives flexibility, but check the balance due on delivery and how you'll fund it.",
+    ]
+  ),
 ];
+
 
 const faq = (n: number, project_id: string | null, q: [string, string], a: [string, string]): Faq => ({
   id: uid(6, n),

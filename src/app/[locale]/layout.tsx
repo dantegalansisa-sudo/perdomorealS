@@ -24,7 +24,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const viewport: Viewport = { themeColor: "#FAF8F4", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#ffffff", width: "device-width", initialScale: 1 };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -35,6 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t("meta.description"),
     applicationName: "Perdomo Real Estate",
     formatDetection: { telephone: false },
+    // Google Search Console HTML-tag verification (alternative: DNS record on the domain).
+    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : undefined,
   };
 }
 

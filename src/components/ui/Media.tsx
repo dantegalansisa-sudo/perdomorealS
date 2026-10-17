@@ -19,7 +19,7 @@ export function ImagePlaceholder({ ratio = "4/3", className, label, compact = fa
   return (
     <div
       className={cn(
-        "relative isolate flex items-center justify-center overflow-hidden bg-gradient-to-br from-sand-2 via-sand to-sand-3 text-stone",
+        "relative isolate flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#e6ebf2] via-[#d9e1eb] to-[#c5d0de] text-navy-soft",
         RATIO_CLASS[ratio],
         className
       )}
@@ -29,13 +29,13 @@ export function ImagePlaceholder({ ratio = "4/3", className, label, compact = fa
       <svg className="absolute inset-0 -z-10 h-full w-full opacity-[0.35]" aria-hidden>
         <defs>
           <pattern id="ph-grid" width="28" height="28" patternUnits="userSpaceOnUse">
-            <path d="M28 0H0V28" fill="none" stroke="#c9a961" strokeOpacity="0.35" strokeWidth="0.6" />
+            <path d="M28 0H0V28" fill="none" stroke="#0b1f3a" strokeOpacity="0.12" strokeWidth="0.6" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#ph-grid)" />
       </svg>
       <div className="flex flex-col items-center gap-2 px-4 text-center">
-        <span className="grid size-10 place-items-center rounded-full border border-gold/40 bg-white/70 text-gold-dark">
+        <span className="grid size-10 place-items-center rounded-full border border-white/70 bg-white/80 text-gold-dark shadow-sm">
           <ImageIcon className="size-4" aria-hidden />
         </span>
         {!compact && <span className="text-[11px] font-semibold tracking-[0.18em] uppercase">{label ?? t("imagesComingSoon")}</span>}

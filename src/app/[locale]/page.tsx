@@ -15,6 +15,7 @@ import { FeaturedProject } from "@/components/home/FeaturedProject";
 import { PropertyCarousel } from "@/components/home/Carousel";
 import { ContactWhatsApp, HomeMap, StatsBar } from "@/components/home/HomeClient";
 import { PostCard } from "@/components/blog/PostCard";
+import { ProjectCard } from "@/components/project/ProjectCard";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -45,6 +46,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
   const zones = [...new Set([...properties.map((p) => p.zone), ...projects.map((p) => p.zone)])].filter(Boolean).sort();
   const featuredProps = properties.filter((p) => p.featured);
+  const otherProjects = projects.filter((p) => !p.is_flagship);
   const available = units.filter((u) => u.status === "available").length;
   const maxBuilt = Math.max(0, ...models.map((m) => m.built_m2));
   const beachMinutes = flagship?.distances.find((d) => /macao|playa|beach/i.test(d.label.en))?.minutes ?? 5;
@@ -52,7 +54,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
   const countBy = (type: string) => properties.filter((p) => p.type === type).length;
   const categories: { href: StaticPathname; label: string; count: string; icon: React.ComponentType<{ className?: string }> }[] = [
-    { href: "/villas", label: tc("categories.villas"), count: t("categories.count", { count: countBy("villa") }), icon: Home },
+    { href: "/villas", label: tc("categories.villas"), count: t("categories.count", { count: countBy("villa") + countBy("house") }), icon: Home },
     { href: "/apartments", label: tc("categories.apartments"), count: t("categories.count", { count: countBy("apartment") }), icon: Building2 },
     { href: "/houses", label: tc("categories.houses"), count: t("categories.count", { count: countBy("house") }), icon: Landmark },
     { href: "/land", label: tc("categories.land"), count: t("categories.count", { count: countBy("land") }), icon: Mountain },
@@ -102,6 +104,27 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         </section>
       )}
 
+      {/* 3b. Other projects */}
+      {otherProjects.length > 0 && (
+        <section className="bg-sand-2 py-24">
+          <div className="container-x">
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <SectionHeading eyebrow={t("projects.eyebrow")} title={t("projects.title")} lead={t("projects.lead")} />
+              <Link href="/projects" className="btn btn-navy">
+                {t("projects.all")} <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </div>
+            <Stagger className="mt-12 grid gap-6 md:grid-cols-2">
+              {otherProjects.map((p) => (
+                <StaggerItem key={p.id}>
+                  <ProjectCard project={p} locale={locale} />
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
+
       {/* 4. Categories */}
       <section className="container-x py-24">
         <SectionHeading eyebrow={t("categories.eyebrow")} title={t("categories.title")} />
@@ -129,7 +152,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       </section>
 
       {/* 5. Featured properties */}
-      <section className="bg-sand-2/60 py-24">
+      <section className="bg-sand-2 py-24">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow={t("properties.eyebrow")} title={t("properties.title")} lead={t("properties.lead")} />
@@ -208,8 +231,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
       {/* 8. Payment plan calculator preview */}
       {flagship && (
-        <section className="container-x py-24">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
+        <section className="bg-sand-2 py-24">
+          <div className="container-x grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
             <div>
               <SectionHeading eyebrow={t("calculator.eyebrow")} title={t("calculator.title")} lead={t("calculator.lead")} />
               <Reveal delay={0.2}>
@@ -226,7 +249,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       )}
 
       {/* 9. Location */}
-      <section className="bg-sand-2/60 py-24">
+      <section className="py-24">
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.3fr]">
           <div>
             <SectionHeading eyebrow={t("location.eyebrow")} title={t("location.title")} lead={t("location.lead")} />
@@ -237,7 +260,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                 { k: "tourism", icon: Sun },
                 { k: "lifestyle", icon: Trees },
               ] as const).map(({ k, icon: Icon }) => (
-                <StaggerItem as="li" key={k} className="flex gap-4 rounded-2xl bg-white p-5">
+                <StaggerItem as="li" key={k} className="flex gap-4 rounded-2xl border border-line bg-sand p-5">
                   <Icon className="mt-0.5 size-5 shrink-0 text-gold-dark" aria-hidden />
                   <div>
                     <p className="font-bold">{t(`location.advantages.${k}.title`)}</p>
@@ -255,7 +278,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
       {/* 10. Blog */}
       {posts.length > 0 && (
-        <section className="container-x py-24">
+        <section className="bg-sand-2 py-24">
+         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading eyebrow={t("blog.eyebrow")} title={t("blog.title")} />
             <Link href="/blog" className="btn btn-ghost">
@@ -269,6 +293,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
               </StaggerItem>
             ))}
           </Stagger>
+         </div>
         </section>
       )}
 
@@ -286,8 +311,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       )}
 
       {/* 12. Lead capture */}
-      <section id="contacto" className="container-x pt-8 pb-8">
-        <div className="grid gap-10 overflow-hidden rounded-[2.5rem] bg-white p-6 shadow-[0_40px_80px_-50px_rgba(11,31,58,0.4)] sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:p-14">
+      <section id="contacto" className="relative overflow-hidden bg-navy py-20 lg:py-24">
+        <div aria-hidden className="absolute -top-40 left-[-10%] size-[32rem] rounded-full bg-gold/10 blur-3xl" />
+        <div className="container-x relative">
+        <div className="grid gap-10 overflow-hidden rounded-[2.5rem] bg-white p-6 shadow-[0_40px_80px_-40px_rgba(0,0,0,0.6)] sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:p-14">
           <div>
             <SectionHeading eyebrow={t("contact.eyebrow")} title={t("contact.title")} lead={t("contact.lead")} titleClassName="lg:text-6xl" />
             <div className="mt-8 rounded-2xl bg-sand p-5">
@@ -305,6 +332,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             )}
           </div>
           <LeadForm />
+        </div>
         </div>
       </section>
     </>
