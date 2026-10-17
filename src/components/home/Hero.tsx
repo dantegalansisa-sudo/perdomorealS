@@ -134,10 +134,15 @@ export function Hero({ title, subtitle, zones, villaSrc }: { title: string; subt
 
             {/* Copy, search and CTAs */}
             <div className="relative z-10 -mt-2 lg:order-1 lg:mt-8">
-              <h1 id="hero-title" className="hero-rise text-[2.35rem] leading-[0.95] text-white min-[390px]:text-[2.6rem] sm:text-5xl lg:text-[3rem] xl:text-[3.6rem] 2xl:text-[4.1rem]">
+              {/* Mobile/tablet: quiet, refined sans headline. Desktop: condensed display like the reference. */}
+              <span aria-hidden className="hero-fade mb-4 block h-px w-10 bg-gold lg:hidden" />
+              <h1
+                id="hero-title"
+                className="hero-rise max-w-[22rem] font-sans text-[1.55rem] leading-[1.2] font-light tracking-[-0.01em] text-white/95 normal-case min-[390px]:text-[1.7rem] sm:max-w-md sm:text-[2rem] lg:max-w-none lg:font-display lg:text-[3rem] lg:leading-[0.95] lg:font-normal lg:tracking-[0.005em] lg:text-white lg:uppercase xl:text-[3.6rem] 2xl:text-[4.1rem]"
+              >
                 {title}
               </h1>
-              <p className="hero-fade mt-4 max-w-lg text-[0.95rem] leading-relaxed text-white/70 sm:text-base" style={{ animationDelay: "0.3s" }}>
+              <p className="hero-fade mt-3 max-w-lg text-[0.9rem] leading-relaxed text-white/60 sm:text-base lg:mt-4 lg:text-white/70" style={{ animationDelay: "0.3s" }}>
                 {subtitle}
               </p>
 
