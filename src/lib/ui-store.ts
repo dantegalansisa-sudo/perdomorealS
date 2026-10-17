@@ -17,6 +17,8 @@ export type PageContextState = {
   projectId?: string | null;
   propertyId?: string | null;
   interest?: string | null;
+  /** Overrides the prefilled WhatsApp message (e.g. a specific property). */
+  whatsappMessage?: string | null;
   alternates?: { es: string; en: string } | null;
 };
 export const pageContext = createStore<PageContextState>({});

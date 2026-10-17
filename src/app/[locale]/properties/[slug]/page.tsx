@@ -80,6 +80,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ local
         propertyId={p.id}
         projectId={p.project_id}
         interest={title}
+        whatsappMessage={whatsappMessage}
         alternates={{ es: localizedUrl("es", "/properties/[slug]", { es: p.slug_es, en: p.slug_en }), en: localizedUrl("en", "/properties/[slug]", { es: p.slug_es, en: p.slug_en }) }}
       />
       <TrackRecent id={p.id} />

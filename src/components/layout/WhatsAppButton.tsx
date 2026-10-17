@@ -14,6 +14,7 @@ export function useWhatsApp(projectIdOverride?: string | null, customMessage?: s
   const projectId = projectIdOverride ?? ctx.projectId ?? null;
   const message =
     customMessage ??
+    ctx.whatsappMessage ??
     (projectId && site.whatsappProjects[projectId] ? tr(site.whatsappProjects[projectId], locale) : tr(site.whatsappDefault, locale));
   const href = waLink(site.whatsappNumber, message);
   const onClick = () => {

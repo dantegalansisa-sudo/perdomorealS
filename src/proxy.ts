@@ -41,5 +41,5 @@ export default function proxy(req: NextRequest) {
 
 export const config = {
   // Skip API, Next internals, metadata routes and files with an extension.
-  matcher: ["/((?!api|_next|_vercel|sitemap.xml|robots.txt|icon.svg|.*\..*).*)"],
+  matcher: ["/((?!api|_next|_vercel|sitemap\\.xml|robots\\.txt|og-default\\.png|.*\\..*).*)"],
 };
