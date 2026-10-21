@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Compass, Eye, HeartHandshake } from "lucide-react";
 import { buildMetadata, localizedUrl } from "@/lib/seo";
@@ -34,7 +35,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <div className="mt-6 grid gap-12 lg:grid-cols-2 lg:items-end">
         <SectionHeading as="h1" immediate eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
         <ClipReveal className="overflow-hidden rounded-[2rem]">
-          <ImagePlaceholder ratio="4/3" />
+          <div className="relative aspect-[4/3]">
+            <Image src="/images/villas/calle-principio-village.webp" alt={t("imageAlt")} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          </div>
         </ClipReveal>
       </div>
 

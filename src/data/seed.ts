@@ -5,6 +5,7 @@
  */
 import type {
   Faq,
+  MediaItem,
   PaymentPlan,
   Post,
   Project,
@@ -31,7 +32,7 @@ const standardPlans: PaymentPlan[] = [
 ];
 
 const placeholderDeveloper = {
-  name: "Desarrollos del Este (ejemplo)",
+  name: "Constructora del proyecto (por confirmar)",
   description: t(
     "Desarrollador de ejemplo. Aquí irá la trayectoria real del desarrollador, sus proyectos entregados y su enfoque de construcción.",
     "Sample developer. The real developer's track record, delivered projects and construction approach will go here."
@@ -48,8 +49,8 @@ export const seedSettings: SiteSettings = {
   ),
   whatsapp_project_messages: {
     [FLAGSHIP_ID]: t(
-      "Hola, me interesa el proyecto 89 Villas en Macao. ¿Me pueden enviar precios y disponibilidad?",
-      "Hi, I'm interested in the 89 Villas in Macao project. Could you send me prices and availability?"
+      "Hola, me interesa Principio Village (89 villas en Macao). ¿Me pueden enviar precios y disponibilidad?",
+      "Hi, I'm interested in Principio Village (89 villas in Macao). Could you send me prices and availability?"
     ),
   },
   email: "info@perdomorealestate.com",
@@ -72,20 +73,20 @@ export const seedSettings: SiteSettings = {
 export const seedProjects: Project[] = [
   {
     id: FLAGSHIP_ID,
-    slug_es: "89-villas-macao",
-    slug_en: "89-villas-macao",
-    name: "89 Villas Macao",
-    tagline: t("89 villas privadas a minutos de Playa Macao", "89 private villas minutes from Macao Beach"),
+    slug_es: "principio-village-macao",
+    slug_en: "principio-village-macao",
+    name: "Principio Village",
+    tagline: t("89 villas a 1.2 km de Playa Macao · Vivir con propósito", "89 villas 1.2 km from Macao Beach · Live with purpose"),
     description: t(
-      "Comunidad cerrada de 89 villas contemporáneas con piscina privada, rodeada de jardines tropicales y a pocos minutos de una de las playas más vírgenes del Caribe. Tres modelos de villa, amenidades de resort y planes de pago flexibles durante la construcción.",
-      "A gated community of 89 contemporary villas with private pools, surrounded by tropical gardens and just minutes from one of the Caribbean's most unspoiled beaches. Three villa models, resort-style amenities and flexible payment plans during construction."
+      "Principio Village es una comunidad de 89 villas contemporáneas a solo 1.2 km de Playa Macao, una de las playas más naturales del Caribe. Arquitectura tropical moderna con piedra natural, madera y grandes ventanales; jardines con iluminación cálida y calles privadas. Dos modelos: Villa Victoria (181 m², 3 habitaciones, 3.5 baños, marquesina y jacuzzi opcional) y Villa Brisa (135 m², techos de 2.90 m con área a doble altura de 4.10 m y losa en azotea preparada para construir terraza). Cada villa cuenta con título de propiedad, que se entrega al comprador en el cierre.",
+      "Principio Village is a community of 89 contemporary villas just 1.2 km from Macao Beach, one of the Caribbean's most natural beaches. Modern tropical architecture with natural stone, wood and floor-to-ceiling glass; warmly lit gardens and private streets. Two models: Villa Victoria (181 m², 3 bedrooms, 3.5 baths, carport and optional jacuzzi) and Villa Brisa (135 m², 2.90 m ceilings with a 4.10 m double-height area and a rooftop slab ready for a terrace). Every villa has its property title, handed to the buyer at closing."
     ),
     location_name: "Macao, Punta Cana",
     zone: "Macao",
     lat: 18.7612,
     lng: -68.5523,
     status: "preventa",
-    amenities: ["pool", "gated", "security", "clubhouse", "gym", "playground", "bbq", "garden", "beach_access", "coworking"],
+    amenities: ["gated", "security", "garden", "parking", "beach_access", "rooftop", "playground", "bbq"],
     timeline: [
       { phase: t("Lanzamiento y preventa", "Launch & pre-sale"), date: "2026-03-01", progress: 100 },
       { phase: t("Infraestructura y calles", "Infrastructure & roads"), date: "2026-09-01", progress: 60 },
@@ -96,19 +97,21 @@ export const seedProjects: Project[] = [
     payment_plans: standardPlans,
     documents: [
       { name: t("Brochure del proyecto", "Project brochure"), url: "" },
+      { name: t("Ficha Villa Victoria", "Villa Victoria fact sheet"), url: "/images/villas/ficha-villa-victoria.webp" },
+      { name: t("Título de propiedad (copia de referencia)", "Property title (reference copy)"), url: "" },
       { name: t("Lista de precios", "Price list"), url: "" },
       { name: t("Especificaciones técnicas", "Technical specifications"), url: "" },
       { name: t("Modelo de contrato de promesa", "Sample purchase agreement"), url: "" },
     ],
     developer: placeholderDeveloper,
     distances: [
-      { label: t("Playa Macao", "Macao Beach"), value: "5 min", minutes: 5 },
+      { label: t("Playa Macao (1.2 km aprox.)", "Macao Beach (approx. 1.2 km)"), value: "1.2 km", minutes: 3 },
       { label: t("Aeropuerto Internacional de Punta Cana", "Punta Cana International Airport"), value: "25 min", minutes: 25 },
       { label: t("Bávaro (centro)", "Bávaro (downtown)"), value: "15 min", minutes: 15 },
       { label: t("Supermercado y farmacias", "Supermarket & pharmacies"), value: "8 min", minutes: 8 },
       { label: t("Campos de golf", "Golf courses"), value: "20 min", minutes: 20 },
     ],
-    price_from: 219000,
+    price_from: 245000,
     delivery_date: "2028-09-01",
     total_units: 89,
     video_url: null,
@@ -120,11 +123,11 @@ export const seedProjects: Project[] = [
     seo: {
       es: {
         title: "89 Villas en Venta en Macao, Punta Cana | Perdomo Real Estate",
-        description: "Villas con piscina privada a minutos de Playa Macao. Masterplan interactivo, disponibilidad en tiempo real y planes de pago durante la construcción.",
+        description: "Villas a 1.2 km de Playa Macao con título en mano. Villa Victoria de 181 m² desde US$245,000, masterplan interactivo y planes de pago durante la construcción.",
       },
       en: {
         title: "89 Villas for Sale in Macao, Punta Cana | Perdomo Real Estate",
-        description: "Private-pool villas minutes from Macao Beach. Interactive masterplan, live availability and payment plans during construction.",
+        description: "Villas 1.2 km from Macao Beach with title in hand. 181 m² Villa Victoria from US$245,000, interactive masterplan and payment plans during construction.",
       },
     },
     is_placeholder: true,
@@ -218,59 +221,59 @@ export const seedProjects: Project[] = [
   },
 ];
 
+// Models based on the developer's material: Villa Victoria (flyer) and the 135 m² rooftop-ready model (chat).
+// Lot sizes, Brisa bedroom count and its price are still to be confirmed.
 export const seedModels: VillaModel[] = [
   {
-    id: uid(2, 1),
+    id: uid(2, 2),
     project_id: FLAGSHIP_ID,
-    code: "BRISA",
-    name: "Brisa",
-    bedrooms: 2,
-    bathrooms: 2,
-    built_m2: 135,
+    code: "VICTORIA",
+    name: "Victoria",
+    bedrooms: 3,
+    bathrooms: 3.5,
+    built_m2: 181,
     lot_m2: 250,
-    price_from: 219000,
+    price_from: 245000,
     description: t(
-      "Villa de una planta con cocina abierta, terraza techada y piscina privada. Ideal como segunda residencia o para alquiler vacacional.",
-      "Single-level villa with open kitchen, covered terrace and private pool. Ideal as a second home or vacation rental."
+      "Villa de dos niveles con fachada de piedra natural y madera, escalera a doble altura iluminada y balcón-terraza en la planta alta. Sala, comedor y cocina con isla integrados, marquesina techada y jacuzzi opcional en el jardín. Precio de introducción.",
+      "Two-storey villa with a natural stone and wood façade, a lit double-height staircase and an upstairs balcony-terrace. Open living, dining and island kitchen, covered carport and an optional garden jacuzzi. Introductory price."
     ),
-    features: [t("Piscina privada", "Private pool"), t("Terraza techada", "Covered terrace"), t("Cocina abierta", "Open kitchen"), t("Parqueo para 1 vehículo", "1-car parking")],
+    features: [
+      t("3 habitaciones y 3.5 baños", "3 bedrooms and 3.5 baths"),
+      t("181 m² de construcción", "181 m² built area"),
+      t("Sala, comedor y cocina con isla", "Living, dining and island kitchen"),
+      t("Escalera a doble altura con ventanal", "Double-height staircase with glass wall"),
+      t("Balcón-terraza en planta alta", "Upstairs balcony-terrace"),
+      t("Marquesina techada", "Covered carport"),
+      t("Jacuzzi opcional", "Optional jacuzzi"),
+      t("Fachada de piedra natural y madera", "Natural stone and wood façade"),
+    ],
     sort: 1,
     is_placeholder: true,
   },
   {
-    id: uid(2, 2),
+    id: uid(2, 1),
     project_id: FLAGSHIP_ID,
-    code: "CORAL",
-    name: "Coral",
-    bedrooms: 3,
+    code: "BRISA",
+    name: "Brisa 135",
+    bedrooms: 2,
     bathrooms: 2.5,
-    built_m2: 185,
-    lot_m2: 300,
-    price_from: 295000,
+    built_m2: 135,
+    lot_m2: 200,
+    price_from: null,
     description: t(
-      "Villa de dos niveles con master suite en planta alta, doble altura en la sala y amplio jardín con piscina.",
-      "Two-level villa with upstairs master suite, double-height living room and a generous garden with pool."
+      "Villa de 135 m² de construcción con techos de 2.90 m y un área a doble altura de 4.10 m que llena de luz la planta baja. Su losa en azotea queda preparada para construir una terraza o rooftop privado.",
+      "135 m² villa with 2.90 m ceilings and a 4.10 m double-height area that floods the ground floor with light. Its rooftop slab is ready for building a private terrace or rooftop lounge."
     ),
-    features: [t("Doble altura", "Double-height living"), t("Master suite con walk-in", "Master suite with walk-in closet"), t("Piscina privada", "Private pool"), t("Parqueo para 2 vehículos", "2-car parking")],
+    features: [
+      t("135 m² de construcción", "135 m² built area"),
+      t("Techos de 2.90 m", "2.90 m ceilings"),
+      t("Área a doble altura de 4.10 m", "4.10 m double-height area"),
+      t("Azotea preparada para terraza", "Rooftop slab ready for a terrace"),
+      t("Cocina abierta", "Open kitchen"),
+      t("Marquesina", "Carport"),
+    ],
     sort: 2,
-    is_placeholder: true,
-  },
-  {
-    id: uid(2, 3),
-    project_id: FLAGSHIP_ID,
-    code: "ARENA",
-    name: "Arena",
-    bedrooms: 4,
-    bathrooms: 3.5,
-    built_m2: 240,
-    lot_m2: 380,
-    price_from: 385000,
-    description: t(
-      "La villa insignia: cuatro habitaciones en suite, rooftop con área social y piscina con deck de madera.",
-      "The signature villa: four en-suite bedrooms, rooftop lounge and pool with wooden deck."
-    ),
-    features: [t("Rooftop social", "Rooftop lounge"), t("4 habitaciones en suite", "4 en-suite bedrooms"), t("Cuarto de servicio", "Staff quarters"), t("Parqueo para 2 vehículos", "2-car parking")],
-    sort: 3,
     is_placeholder: true,
   },
 ];
@@ -285,8 +288,8 @@ function unitStatus(n: number): UnitStatus {
 
 export const seedUnits: Unit[] = Array.from({ length: 89 }, (_, i) => {
   const n = i + 1;
-  // Larger "Arena" lots on the perimeter, "Coral" in the middle ring, "Brisa" inside.
-  const model = n % 5 === 0 || n > 80 ? seedModels[2] : n % 2 === 0 ? seedModels[1] : seedModels[0];
+  // Roughly one in three lots is the rooftop-ready Brisa 135; the rest are Victoria.
+  const model = n % 3 === 0 ? seedModels[1] : seedModels[0];
   const lotVariation = ((n * 13) % 40) - 10;
   return {
     id: uid(3, n),
@@ -295,12 +298,13 @@ export const seedUnits: Unit[] = Array.from({ length: 89 }, (_, i) => {
     code: `V-${n.toString().padStart(2, "0")}`,
     lot_number: n,
     status: unitStatus(n),
-    price: (model.price_from ?? 0) + Math.max(0, lotVariation) * 1500,
+    price: model.price_from != null ? model.price_from + Math.max(0, lotVariation) * 1000 : null,
     lot_m2: model.lot_m2 + lotVariation,
     built_m2: model.built_m2,
     is_placeholder: true,
   };
 });
+
 
 type SeedProperty = Omit<Property, "created_at" | "seo" | "published" | "is_placeholder" | "video_url" | "tour_url"> & {
   created_at?: string;
@@ -309,23 +313,23 @@ type SeedProperty = Omit<Property, "created_at" | "seo" | "published" | "is_plac
 const baseProps: SeedProperty[] = [
   {
     id: uid(4, 1),
-    slug_es: "villa-coral-macao-v12",
-    slug_en: "villa-coral-macao-v12",
-    title: t("Villa Coral V-12 en 89 Villas Macao", "Villa Coral V-12 at 89 Villas Macao"),
+    slug_es: "villa-victoria-v12-principio-village",
+    slug_en: "villa-victoria-v12-principio-village",
+    title: t("Villa Victoria V-12 en Principio Village", "Villa Victoria V-12 at Principio Village"),
     description: t(
-      "Villa de 3 habitaciones en preventa dentro de comunidad cerrada, con piscina privada y a 5 minutos de Playa Macao.",
-      "Three-bedroom pre-sale villa in a gated community, with private pool, 5 minutes from Macao Beach."
+      "Villa Victoria de 181 m² con 3 habitaciones, 3.5 baños, sala, comedor, cocina con isla, marquesina y jacuzzi opcional. En Principio Village, a 1.2 km de Playa Macao. Se entrega con título de propiedad en mano.",
+      "181 m² Villa Victoria with 3 bedrooms, 3.5 baths, living and dining areas, island kitchen, carport and optional jacuzzi. At Principio Village, 1.2 km from Macao Beach. Delivered with the property title in hand."
     ),
     type: "villa",
     zone: "Macao",
     project_id: FLAGSHIP_ID,
-    price: 298000,
+    price: 245000,
     bedrooms: 3,
-    bathrooms: 2.5,
-    built_m2: 185,
-    lot_m2: 305,
+    bathrooms: 3.5,
+    built_m2: 181,
+    lot_m2: 250,
     status: "preventa",
-    amenities: ["pool", "gated", "security", "garden"],
+    amenities: ["gated", "security", "garden", "parking"],
     lat: 18.7609,
     lng: -68.5517,
     badges: ["presale", "new"],
@@ -333,26 +337,26 @@ const baseProps: SeedProperty[] = [
   },
   {
     id: uid(4, 2),
-    slug_es: "villa-arena-macao-v85",
-    slug_en: "villa-arena-macao-v85",
-    title: t("Villa Arena V-85 con rooftop", "Villa Arena V-85 with rooftop"),
+    slug_es: "villa-brisa-v15-principio-village",
+    slug_en: "villa-brisa-v15-principio-village",
+    title: t("Villa Brisa V-15 con azotea para terraza", "Villa Brisa V-15 with rooftop-ready slab"),
     description: t(
-      "La villa más amplia del proyecto, en lote perimetral con más privacidad. Cuatro suites y rooftop social.",
-      "The largest villa in the project, on a perimeter lot with extra privacy. Four suites and a rooftop lounge."
+      "Villa de 135 m² con techos de 2.90 m, área a doble altura de 4.10 m y losa en azotea lista para construir terraza. En Principio Village, a 1.2 km de Playa Macao, con título de propiedad en mano.",
+      "135 m² villa with 2.90 m ceilings, a 4.10 m double-height area and a rooftop slab ready for a terrace. At Principio Village, 1.2 km from Macao Beach, with the property title in hand."
     ),
     type: "villa",
     zone: "Macao",
     project_id: FLAGSHIP_ID,
-    price: 412000,
-    bedrooms: 4,
-    bathrooms: 3.5,
-    built_m2: 240,
-    lot_m2: 410,
+    price: null,
+    bedrooms: 2,
+    bathrooms: 2.5,
+    built_m2: 135,
+    lot_m2: 200,
     status: "preventa",
-    amenities: ["pool", "gated", "security", "rooftop", "garden"],
+    amenities: ["gated", "security", "rooftop", "garden", "parking"],
     lat: 18.7621,
     lng: -68.5531,
-    badges: ["last_units"],
+    badges: ["presale"],
     featured: true,
   },
   {
@@ -609,6 +613,15 @@ export const seedProperties: Property[] = baseProps.map((p, i) => ({
 
 const article = (paragraphs: string[]) => paragraphs.map((p) => (p.startsWith("<") ? p : `<p>${p}</p>`)).join("\n");
 
+const POST_COVERS: Record<number, string> = {
+  1: "/images/villas/fachada-villa-victoria.webp",
+  2: "/images/villas/ubicacion-playa-macao.webp",
+  3: "/images/villas/villa-victoria-lateral.webp",
+  4: "/images/villas/interior-sala.webp",
+  5: "/images/villas/villa-victoria-exterior.webp",
+  6: "/images/villas/calle-principio-village.webp",
+};
+
 // Blog topics follow the client's brief. Content is original sample copy, to be reviewed before publishing.
 const post = (n: number, category: string, date: string, slugs: [string, string], title: [string, string], excerpt: [string, string], es: string[], en: string[]): Post => ({
   id: uid(5, n),
@@ -618,7 +631,7 @@ const post = (n: number, category: string, date: string, slugs: [string, string]
   excerpt: t(...excerpt),
   content: t(article(es), article(en)),
   category,
-  cover_url: null,
+  cover_url: POST_COVERS[n] ?? null,
   author: "Perdomo Real Estate",
   published: true,
   published_at: date,
@@ -829,8 +842,68 @@ export const seedFaqs: Faq[] = [
   faq(6, null, ["¿Qué costos adicionales debo considerar?", "What additional costs should I consider?"], ["Impuesto de transferencia (si aplica), honorarios legales, cuota de mantenimiento e IPI anual. Respuesta de ejemplo.", "Transfer tax (if applicable), legal fees, HOA fees and annual property tax. Sample answer."]),
   faq(7, FLAGSHIP_ID, ["¿Cuándo se entregan las villas?", "When will the villas be delivered?"], ["La entrega está planificada por fases: Fase 1 en 2027 y Fase 2 en 2028. Fechas de ejemplo.", "Delivery is planned in phases: Phase 1 in 2027 and Phase 2 in 2028. Sample dates."]),
   faq(8, FLAGSHIP_ID, ["¿Puedo reservar una villa a distancia?", "Can I reserve a villa remotely?"], ["Sí, la reserva se puede hacer en línea con un depósito y firma digital. Respuesta de ejemplo.", "Yes, you can reserve online with a deposit and digital signature. Sample answer."]),
-  faq(9, FLAGSHIP_ID, ["¿Las villas incluyen piscina?", "Do the villas include a pool?"], ["Todos los modelos incluyen piscina privada. Respuesta de ejemplo.", "All models include a private pool. Sample answer."]),
+  faq(9, FLAGSHIP_ID, ["¿Qué incluye la Villa Victoria?", "What does Villa Victoria include?"], ["181 m² de construcción, 3 habitaciones, 3.5 baños, sala, comedor, cocina, marquesina y jacuzzi opcional. Precio de introducción desde US$245,000.", "181 m² built area, 3 bedrooms, 3.5 baths, living and dining areas, kitchen, carport and an optional jacuzzi. Introductory price from US$245,000."]),
+  faq(13, FLAGSHIP_ID, ["¿Las villas tienen título de propiedad?", "Do the villas have a property title?"], ["Sí. Cada villa cuenta con su título de propiedad y se entrega al comprador en el cierre de la compra.", "Yes. Each villa has its own property title, handed to the buyer when the purchase closes."]),
+  faq(14, FLAGSHIP_ID, ["¿Qué tiene de especial la Villa Brisa 135?", "What is special about Villa Brisa 135?"], ["Tiene 135 m² de construcción, techos de 2.90 m, un área a doble altura de 4.10 m y una losa en azotea preparada para construir una terraza.", "It has a 135 m² built area, 2.90 m ceilings, a 4.10 m double-height area and a rooftop slab ready for building a terrace."]),
+  faq(0, null, ["¿Las propiedades se entregan con título?", "Are properties delivered with a title?"], ["Sí. Las propiedades que comercializamos cuentan con título de propiedad, que se entrega al comprador al cerrar la compra.", "Yes. The properties we market have a property title, which is handed to the buyer at closing."]),
   faq(10, FLAGSHIP_ID, ["¿Cuál es la cuota de mantenimiento estimada?", "What is the estimated HOA fee?"], ["Se informará con el reglamento final del condominio. Respuesta de ejemplo.", "It will be confirmed with the final condominium rules. Sample answer."]),
   faq(11, FLAGSHIP_ID, ["¿Se permite el alquiler vacacional?", "Is vacation rental allowed?"], ["Sí, el reglamento contempla el alquiler a corto plazo. Respuesta de ejemplo.", "Yes, the rules allow short-term rentals. Sample answer."]),
   faq(12, FLAGSHIP_ID, ["¿Puedo personalizar los acabados?", "Can I customize the finishes?"], ["Hay paquetes de acabados opcionales disponibles hasta cierta etapa de obra. Respuesta de ejemplo.", "Optional finish packages are available up to a certain construction stage. Sample answer."]),
+];
+
+// ───────────── Media ─────────────
+// Photos supplied by the developer (Principio Village) and sample floor plans.
+// Until each project/property gets its own photography, images are reused where they fit.
+const IMG = {
+  street: { url: "/images/villas/calle-principio-village.webp", alt: t("Calle de villas en Principio Village, Macao", "Street of villas at Principio Village, Macao") },
+  facade: { url: "/images/villas/fachada-villa-victoria.webp", alt: t("Fachada de villa moderna con palmera y jardín tropical", "Modern villa façade with palm tree and tropical garden") },
+  exterior: { url: "/images/villas/villa-victoria-exterior.webp", alt: t("Villa Victoria con marquesina y balcón-terraza", "Villa Victoria with carport and balcony-terrace") },
+  side: { url: "/images/villas/villa-victoria-lateral.webp", alt: t("Vista lateral de Villa Victoria", "Side view of Villa Victoria") },
+  living: { url: "/images/villas/interior-sala.webp", alt: t("Sala amplia con ventanales", "Spacious living room with large windows") },
+  dining: { url: "/images/villas/interior-comedor.webp", alt: t("Comedor integrado con la cocina", "Dining area open to the kitchen") },
+  kitchen: { url: "/images/villas/interior-cocina.webp", alt: t("Cocina con isla y acabados en madera", "Island kitchen with wood finishes") },
+  bedroom: { url: "/images/villas/interior-habitacion.webp", alt: t("Habitación principal", "Master bedroom") },
+  jacuzzi: { url: "/images/villas/interior-jacuzzi.webp", alt: t("Jacuzzi opcional en el jardín", "Optional garden jacuzzi") },
+  aerial: { url: "/images/villas/ubicacion-playa-macao.webp", alt: t("Vista aérea: Principio Village a 1.2 km de Playa Macao", "Aerial view: Principio Village 1.2 km from Macao Beach") },
+  sheet: { url: "/images/villas/ficha-villa-victoria.webp", alt: t("Ficha de Villa Victoria: 181 m², 3 habitaciones, 3.5 baños", "Villa Victoria fact sheet: 181 m², 3 bedrooms, 3.5 baths") },
+} as const;
+const PLAN = (file: string, es: string, en: string) => ({ url: `/images/plans/${file}.webp`, alt: t(es, en) });
+
+let mediaSeq = 0;
+function gallery(owner_type: MediaItem["owner_type"], owner_id: string, images: { url: string; alt: { es: string; en: string } }[], kind: MediaItem["kind"] = "image"): MediaItem[] {
+  return images.map((img, i) => ({
+    id: uid(7, ++mediaSeq),
+    owner_type,
+    owner_id,
+    url: img.url,
+    path: null,
+    alt: img.alt,
+    sort: i,
+    is_cover: kind === "image" && i === 0,
+    kind,
+  }));
+}
+
+export const seedMedia: MediaItem[] = [
+  ...gallery("project", FLAGSHIP_ID, [IMG.street, IMG.facade, IMG.exterior, IMG.side, IMG.living, IMG.dining, IMG.kitchen, IMG.bedroom, IMG.jacuzzi, IMG.aerial]),
+  ...gallery("project", ALTAMAR_ID, [IMG.living, IMG.kitchen, IMG.bedroom, IMG.dining]),
+  ...gallery("project", GARDEN_ID, [IMG.street, IMG.dining, IMG.living]),
+  ...gallery("model", seedModels[0].id, [IMG.exterior, IMG.side, IMG.living, IMG.dining, IMG.kitchen, IMG.bedroom, IMG.jacuzzi, IMG.sheet]),
+  ...gallery("model", seedModels[0].id, [PLAN("victoria-planta-baja", "Plano planta baja, Villa Victoria", "Ground floor plan, Villa Victoria"), PLAN("victoria-planta-alta", "Plano planta alta, Villa Victoria", "Upper floor plan, Villa Victoria")], "floorplan"),
+  ...gallery("model", seedModels[1].id, [IMG.facade, IMG.street, IMG.kitchen, IMG.living]),
+  ...gallery("model", seedModels[1].id, [PLAN("brisa-planta-baja", "Plano planta baja, Villa Brisa 135", "Ground floor plan, Villa Brisa 135"), PLAN("brisa-planta-alta", "Plano planta alta, Villa Brisa 135", "Upper floor plan, Villa Brisa 135"), PLAN("brisa-azotea", "Plano de azotea, Villa Brisa 135", "Rooftop plan, Villa Brisa 135")], "floorplan"),
+  ...gallery("property", uid(4, 1), [IMG.exterior, IMG.facade, IMG.side, IMG.living, IMG.dining, IMG.kitchen, IMG.bedroom, IMG.jacuzzi]),
+  ...gallery("property", uid(4, 1), [PLAN("victoria-planta-baja", "Plano planta baja", "Ground floor plan"), PLAN("victoria-planta-alta", "Plano planta alta", "Upper floor plan")], "floorplan"),
+  ...gallery("property", uid(4, 2), [IMG.facade, IMG.street, IMG.side, IMG.kitchen, IMG.living]),
+  ...gallery("property", uid(4, 2), [PLAN("brisa-planta-baja", "Plano planta baja", "Ground floor plan"), PLAN("brisa-planta-alta", "Plano planta alta", "Upper floor plan"), PLAN("brisa-azotea", "Plano de azotea", "Rooftop plan")], "floorplan"),
+  ...gallery("property", uid(4, 3), [IMG.living, IMG.kitchen, IMG.bedroom, IMG.dining]),
+  ...gallery("property", uid(4, 4), [IMG.bedroom, IMG.jacuzzi, IMG.living, IMG.kitchen]),
+  ...gallery("property", uid(4, 5), [IMG.kitchen, IMG.living, IMG.bedroom]),
+  ...gallery("property", uid(4, 6), [IMG.dining, IMG.living, IMG.bedroom]),
+  ...gallery("property", uid(4, 7), [IMG.side, IMG.facade, IMG.living]),
+  ...gallery("property", uid(4, 8), [IMG.street, IMG.side, IMG.dining]),
+  ...gallery("property", uid(4, 9), [IMG.facade, IMG.jacuzzi, IMG.exterior, IMG.living]),
+  ...gallery("property", uid(4, 10), [IMG.aerial]),
+  ...gallery("property", uid(4, 11), [IMG.aerial]),
+  ...gallery("property", uid(4, 12), [IMG.aerial]),
 ];

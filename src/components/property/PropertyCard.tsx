@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { ImagePlaceholder } from "@/components/ui/Media";
 import { PlaceholderBadge } from "@/components/ui/PlaceholderBadge";
 import { Price } from "@/components/ui/Price";
+import { TitleInHandInline } from "@/components/sections/TitleInHand";
 import { useCompare, useFavorites } from "@/lib/stores";
 import type { Badge, Property } from "@/lib/types";
 import { cn, slugOf, tr } from "@/lib/utils";
@@ -153,7 +154,10 @@ export function PropertyCard({
         </ul>
         <div className="mt-4 flex items-end justify-between border-t border-line pt-4">
           <Price usd={p.price} className="font-display text-2xl" />
-          <span className="text-xs font-semibold text-stone">{t(`status.${p.status}`)}</span>
+          <span className="flex flex-col items-end gap-1 text-right">
+            <TitleInHandInline />
+            <span className="text-xs font-semibold text-stone">{t(`status.${p.status}`)}</span>
+          </span>
         </div>
       </div>
     </motion.article>

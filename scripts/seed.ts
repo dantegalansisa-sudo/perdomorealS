@@ -7,7 +7,7 @@
  */
 import { config } from "dotenv";
 import { createClient } from "@supabase/supabase-js";
-import { seedFaqs, seedModels, seedPosts, seedProjects, seedProperties, seedSettings, seedUnits } from "../src/data/seed";
+import { seedFaqs, seedMedia, seedModels, seedPosts, seedProjects, seedProperties, seedSettings, seedUnits } from "../src/data/seed";
 
 config({ path: ".env.local" });
 config();
@@ -43,6 +43,7 @@ async function main() {
   await run(`properties (${seedProperties.length})`, db.from("properties").upsert(seedProperties.map(({ media: _m, ...p }) => p)));
   await run(`posts (${seedPosts.length})`, db.from("posts").upsert(seedPosts));
   await run(`faqs (${seedFaqs.length})`, db.from("faqs").upsert(seedFaqs));
+  await run(`media (${seedMedia.length})`, db.from("media").upsert(seedMedia));
   console.log("\nDone. All rows are marked is_placeholder = true.");
 }
 

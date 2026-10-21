@@ -19,6 +19,7 @@ import { AmenitiesGrid } from "./AmenitiesGrid";
 import { AvailabilityTable } from "./AvailabilityTable";
 import { ConstructionTimeline } from "./ConstructionTimeline";
 import { LocationSection } from "./LocationSection";
+import { TitleInHandBand } from "@/components/sections/TitleInHand";
 import { Masterplan } from "./Masterplan";
 import { ModelsTabs } from "./ModelsTabs";
 import { ProjectCtas, ProjectWhatsAppLink } from "./ProjectCtas";
@@ -115,6 +116,10 @@ export async function ProjectView({ project, models, units, faqs, properties = [
         </div>
         </div>
       </section>
+
+      <div className="container-x py-10 sm:py-14">
+        <TitleInHandBand />
+      </div>
 
       <SectionNav items={nav} label={t("sectionNav.label")} />
 

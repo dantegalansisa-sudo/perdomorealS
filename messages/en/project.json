@@ -4,14 +4,18 @@
     "listDescription": "Pre-sale, under-construction and move-in ready projects in Macao, Bávaro and Cap Cana. Starting prices, payment plans and availability.",
     "detailTitle": "{name} in {zone}, Punta Cana",
     "landingTitle": "89 Villas for sale in Macao, Punta Cana",
-    "landingDescription": "Private-pool villas minutes from Macao Beach. Interactive masterplan, availability and payment plans during construction."
+    "landingDescription": "Principio Village: 89 villas 1.2 km from Macao Beach with title in hand. 181 m² Villa Victoria from US$245,000, interactive masterplan and payment plans."
   },
-  "breadcrumbs": { "projects": "Projects" },
+  "breadcrumbs": {
+    "projects": "Projects"
+  },
   "landing": {
     "h1": "89 Villas for sale in Macao, Punta Cana",
     "eyebrow": "Flagship project · {zone}"
   },
-  "detail": { "eyebrow": "{zone} · {status}" },
+  "detail": {
+    "eyebrow": "{zone} · {status}"
+  },
   "sectionNav": {
     "label": "Project sections",
     "masterplan": "Masterplan",
@@ -97,8 +101,8 @@
   },
   "models": {
     "eyebrow": "Villa models",
-    "title": "Three ways to live Macao",
-    "lead": "Every model includes a private pool and contemporary finishes.",
+    "title": "Two ways to live Macao",
+    "lead": "Two contemporary tropical models with natural stone, wood and floor-to-ceiling glass.",
     "tabsLabel": "Villa models",
     "fromPrice": "From",
     "features": "Features",

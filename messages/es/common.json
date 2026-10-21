@@ -140,5 +140,24 @@
     "home": "Volver al inicio",
     "properties": "Ver propiedades"
   },
-  "slogan": "Tu propiedad. Tu futuro. Punta Cana."
+  "slogan": "Tu propiedad. Tu futuro. Punta Cana.",
+  "titleInHand": {
+    "badge": "Título en mano",
+    "title": "Tu propiedad, con título en mano",
+    "text": "Todas las propiedades que comercializamos cuentan con su título de propiedad. Al cerrar la compra, el título se entrega directamente al comprador.",
+    "points": {
+      "issued": {
+        "title": "Título de propiedad emitido",
+        "text": "Cada villa y propiedad tiene su título individual."
+      },
+      "delivered": {
+        "title": "Entrega al cierre",
+        "text": "Recibes tu título al completar la compra, sin trámites pendientes."
+      },
+      "reviewed": {
+        "title": "Revisión legal",
+        "text": "Tu abogado puede verificar el título antes de firmar."
+      }
+    }
+  }
 }

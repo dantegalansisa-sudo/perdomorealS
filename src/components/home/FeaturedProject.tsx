@@ -20,11 +20,18 @@ type Props = {
   statuses: UnitStatus[];
   isPlaceholder: boolean;
   villaSrc?: string | null;
+  aerialSrc?: string | null;
 };
 
-function Visual({ step, statuses, villaSrc }: { step: number; statuses: UnitStatus[]; villaSrc?: string | null }) {
+function Visual({ step, statuses, villaSrc, aerialSrc }: { step: number; statuses: UnitStatus[]; villaSrc?: string | null; aerialSrc?: string | null }) {
   const tu = useTranslations("common.unitStatus");
   const tl = useTranslations("home.location.points");
+  if (step === 0 && aerialSrc)
+    return (
+      <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] bg-navy">
+        <Image src={aerialSrc} alt={tl("macao")} fill sizes="(min-width: 1024px) 520px, 90vw" className="object-cover object-[50%_35%]" />
+      </div>
+    );
   if (step === 0)
     return (
       <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] bg-[#e8eef0]">
@@ -142,7 +149,7 @@ function StepText({ step, available }: { step: number; available: number }) {
   );
 }
 
-export function FeaturedProject({ priceFrom, statuses, isPlaceholder, villaSrc }: Props) {
+export function FeaturedProject({ priceFrom, statuses, isPlaceholder, villaSrc, aerialSrc }: Props) {
   const t = useTranslations("home.featured");
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -181,7 +188,7 @@ export function FeaturedProject({ priceFrom, statuses, isPlaceholder, villaSrc }
           {STEPS.map((_, i) => (
             <div key={i} className="grid items-center gap-8 lg:grid-cols-2">
               <StepText step={i} available={available} />
-              <Visual step={i} statuses={statuses} villaSrc={villaSrc} />
+              <Visual step={i} statuses={statuses} villaSrc={villaSrc} aerialSrc={aerialSrc} />
             </div>
           ))}
         </div>
@@ -215,7 +222,7 @@ export function FeaturedProject({ priceFrom, statuses, isPlaceholder, villaSrc }
                   exit={{ opacity: 0, scale: 1.03 }}
                   transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <Visual step={step} statuses={statuses} villaSrc={villaSrc} />
+                  <Visual step={step} statuses={statuses} villaSrc={villaSrc} aerialSrc={aerialSrc} />
                 </motion.div>
               </AnimatePresence>
             </div>

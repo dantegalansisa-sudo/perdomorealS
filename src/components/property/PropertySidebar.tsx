@@ -8,6 +8,7 @@ import { CurrencySwitcher } from "@/components/ui/CurrencySwitcher";
 import { openLeadModal } from "@/lib/ui-store";
 import { track } from "@/lib/analytics";
 import { useSite } from "@/components/providers/SiteProvider";
+import { TitleInHandInline } from "@/components/sections/TitleInHand";
 
 export function PropertySidebar({ price, propertyId, projectId, interest, whatsappMessage }: { price: number | null; propertyId: string; projectId: string | null; interest: string; whatsappMessage: string }) {
   const t = useTranslations("property");
@@ -21,6 +22,7 @@ export function PropertySidebar({ price, propertyId, projectId, interest, whatsa
         <CurrencySwitcher />
       </div>
       <Price usd={price} className="font-display mt-2 block text-5xl text-navy" />
+      <TitleInHandInline className="mt-3" />
       <p className="mt-5 font-bold">{t("interested")}</p>
       <p className="mt-1 text-sm text-stone">{t("interestedText")}</p>
       <div className="mt-5 grid gap-2.5">

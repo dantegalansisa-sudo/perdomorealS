@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight, ArrowUpRight, Building2, Compass, FileCheck2, Globe2, HeartHandshake, Home, KeyRound, Landmark, Mountain, Plane, Sparkles, Sun, Trees, Umbrella, Users } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -16,6 +17,7 @@ import { PropertyCarousel } from "@/components/home/Carousel";
 import { ContactWhatsApp, HomeMap, StatsBar } from "@/components/home/HomeClient";
 import { PostCard } from "@/components/blog/PostCard";
 import { ProjectCard } from "@/components/project/ProjectCard";
+import { TitleInHandBand } from "@/components/sections/TitleInHand";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -83,8 +85,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
     <>
       <Hero title={tr(settings.hero.title, locale)} subtitle={tr(settings.hero.subtitle, locale)} zones={zones} villaSrc={villaSrc} />
 
+      {/* Key trust message from the client: titled properties, title handed over at closing */}
+      <section className="container-x py-12 sm:py-16">
+        <TitleInHandBand />
+      </section>
+
       {/* 2. Featured project — pinned scroll story */}
-      {flagship && <FeaturedProject priceFrom={flagship.price_from} statuses={units.map((u) => u.status)} isPlaceholder={flagship.is_placeholder} villaSrc={villaSrc} />}
+      {flagship && <FeaturedProject priceFrom={flagship.price_from} statuses={units.map((u) => u.status)} isPlaceholder={flagship.is_placeholder} villaSrc={villaSrc} aerialSrc="/images/villas/ubicacion-playa-macao.webp" />}
 
       {/* 3. Animated figures */}
       {flagship && (
@@ -173,11 +180,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
           <div className="lg:sticky lg:top-28 lg:self-start">
             <SectionHeading eyebrow={t("why.eyebrow")} title={t("why.title")} />
             <Parallax distance={30} className="mt-10 hidden overflow-hidden rounded-[2rem] lg:block">
-              <div className="grid aspect-[4/3] place-items-center bg-navy text-white">
-                <div className="text-center">
-                  <Sun className="mx-auto size-10 text-gold" aria-hidden />
-                  <p className="font-display mt-4 text-5xl">Punta Cana</p>
-                  <p className="mt-1 text-sm text-white/60">Macao · Bávaro · Cap Cana</p>
+              <div className="relative aspect-[4/3] bg-navy text-white">
+                <Image src="/images/villas/calle-principio-village.webp" alt={t("why.imageAlt")} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/90 to-transparent p-6">
+                  <p className="font-display text-4xl">Punta Cana</p>
+                  <p className="mt-1 text-sm text-white/70">Macao · Bávaro · Cap Cana</p>
                 </div>
               </div>
             </Parallax>

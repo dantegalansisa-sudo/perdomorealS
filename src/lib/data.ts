@@ -4,6 +4,7 @@ import { hasSupabase } from "@/lib/env";
 import { createPublicClient } from "@/lib/supabase/public";
 import {
   seedFaqs,
+  seedMedia,
   seedModels,
   seedPosts,
   seedProjects,
@@ -22,7 +23,8 @@ async function attachMedia<T extends { id: string; media?: MediaItem[] }>(
   ownerType: MediaItem["owner_type"],
   rows: T[]
 ): Promise<T[]> {
-  if (!hasSupabase || rows.length === 0) return rows.map((r) => ({ ...r, media: r.media ?? [] }));
+  if (!hasSupabase) return rows.map((r) => ({ ...r, media: sortMedia(seedMedia.filter((m) => m.owner_type === ownerType && m.owner_id === r.id)) }));
+  if (rows.length === 0) return rows;
   const { data } = await createPublicClient()
     .from("media")
     .select("*")

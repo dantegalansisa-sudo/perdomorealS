@@ -140,5 +140,24 @@
     "home": "Back to home",
     "properties": "View properties"
   },
-  "slogan": "Your Property. Your Future. Punta Cana."
+  "slogan": "Your Property. Your Future. Punta Cana.",
+  "titleInHand": {
+    "badge": "Title in hand",
+    "title": "Your property, title in hand",
+    "text": "Every property we market has its property title. When you close, the title is handed directly to the buyer.",
+    "points": {
+      "issued": {
+        "title": "Title issued",
+        "text": "Each villa and property has its own individual title."
+      },
+      "delivered": {
+        "title": "Handed over at closing",
+        "text": "You receive your title when the purchase is completed, with nothing pending."
+      },
+      "reviewed": {
+        "title": "Legal review",
+        "text": "Your attorney can verify the title before you sign."
+      }
+    }
+  }
 }

@@ -9,14 +9,24 @@
     "story": "Texto de ejemplo. Aquí irá la historia real de Perdomo Real Estate: quiénes somos, cómo nació la empresa y qué nos diferencia. Creemos que comprar una propiedad en el Caribe debe ser una experiencia emocionante y segura. Por eso seleccionamos proyectos con cuidado, explicamos cada paso y te conectamos con profesionales independientes cuando lo necesitas.",
     "valuesTitle": "Lo que nos guía",
     "values": {
-      "clarity": { "title": "Claridad", "text": "Información completa sobre precios, plazos y costos antes de decidir." },
-      "closeness": { "title": "Cercanía", "text": "Un asesor dedicado que responde por WhatsApp, llamada o en persona." },
-      "care": { "title": "Criterio", "text": "Preferimos recomendarte menos opciones, pero las correctas." }
+      "clarity": {
+        "title": "Claridad",
+        "text": "Información completa sobre precios, plazos y costos antes de decidir."
+      },
+      "closeness": {
+        "title": "Cercanía",
+        "text": "Un asesor dedicado que responde por WhatsApp, llamada o en persona."
+      },
+      "care": {
+        "title": "Criterio",
+        "text": "Preferimos recomendarte menos opciones, pero las correctas."
+      }
     },
     "teamTitle": "Equipo",
     "teamText": "Fotos y perfiles del equipo próximamente.",
     "member": "Asesor/a inmobiliario/a",
-    "cta": "Habla con un asesor"
+    "cta": "Habla con un asesor",
+    "imageAlt": "Villas de Principio Village en Macao, Punta Cana"
   },
   "contact": {
     "metaTitle": "Contacto",
@@ -39,7 +49,13 @@
     "title": "Guías para comprar e invertir en Punta Cana",
     "lead": "Artículos prácticos sobre zonas, procesos de compra, aspectos legales y rentabilidad.",
     "all": "Todos",
-    "categories": { "guias": "Guías", "zonas": "Zonas", "inversion": "Inversión", "legal": "Legal", "noticias": "Noticias" },
+    "categories": {
+      "guias": "Guías",
+      "zonas": "Zonas",
+      "inversion": "Inversión",
+      "legal": "Legal",
+      "noticias": "Noticias"
+    },
     "related": "Sigue leyendo",
     "by": "Por",
     "ctaTitle": "¿Listo para dar el siguiente paso?",

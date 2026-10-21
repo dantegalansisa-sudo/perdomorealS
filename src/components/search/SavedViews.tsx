@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Check, Minus, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { PropertyCard } from "@/components/property/PropertyCard";
-import { ImagePlaceholder } from "@/components/ui/Media";
+import { coverOf, MediaImage } from "@/components/ui/Media";
 import { Price } from "@/components/ui/Price";
 import { CurrencySwitcher } from "@/components/ui/CurrencySwitcher";
 import { useCompare, useFavorites } from "@/lib/stores";
@@ -104,7 +104,7 @@ export function CompareView({ properties }: { properties: Property[] }) {
               {list.map((p) => (
                 <th key={p.id} scope="col" className="p-4 text-left align-top font-normal">
                   <div className="relative">
-                    <ImagePlaceholder ratio="4/3" className="rounded-2xl" compact />
+                    <MediaImage media={coverOf(p.media)} locale={locale as "es" | "en"} ratio="4/3" sizes="240px" className="rounded-2xl" />
                     <button type="button" onClick={() => toggle(p.id)} aria-label={t("remove")} className="absolute top-2 right-2 grid size-8 place-items-center rounded-full bg-white shadow">
                       <X className="size-4" />
                     </button>

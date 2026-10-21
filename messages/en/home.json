@@ -33,19 +33,19 @@
     "villaAlt": "Modern two-storey villa with tropical garden in Punta Cana (illustrative image)"
   },
   "featured": {
-    "eyebrow": "Featured project",
+    "eyebrow": "Featured project · Principio Village",
     "title": "89 Villas in Macao",
     "cta": "Discover the project",
     "steps": {
       "location": {
         "label": "Location",
-        "title": "5 minutes from Macao Beach",
-        "text": "One of Punta Cana's most unspoiled beaches, connected to Bávaro and the airport by the Coral highway."
+        "title": "1.2 km from Macao Beach",
+        "text": "One of Punta Cana's most natural beaches, connected to Bávaro and the airport by the Coral highway."
       },
       "villa": {
         "label": "The villa",
-        "title": "Three models, private pool",
-        "text": "Brisa, Coral and Arena villas with 2 to 4 bedrooms, contemporary tropical design and a pool on every lot."
+        "title": "Two villa models",
+        "text": "The 181 m² Villa Victoria with 3 bedrooms and 3.5 baths, and the 135 m² Villa Brisa with a 4.10 m double height and a rooftop ready for a terrace."
       },
       "amenities": {
         "label": "Amenities",
@@ -100,14 +100,15 @@
         "text": "We connect you with independent attorneys for due diligence and closing."
       },
       "transparent": {
-        "title": "Transparent information",
-        "text": "Clear prices, payment plans and availability, updated from the developer."
+        "title": "Title in hand",
+        "text": "Properties are titled and the title is handed to the buyer at closing. Clear prices and availability."
       },
       "after": {
         "title": "After the purchase",
         "text": "We guide you on property management, vacation rentals and maintenance."
       }
-    }
+    },
+    "imageAlt": "Street of villas at Principio Village, Macao"
   },
   "process": {
     "eyebrow": "Buying process",
